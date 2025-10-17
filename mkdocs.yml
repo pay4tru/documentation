@@ -1,0 +1,126 @@
+site_name: Documentação Amasso
+site_description: Documentação técnica completa da plataforma Amasso
+site_author: Equipe Amasso
+repo_url: https://github.com/pay4tru/documentation
+repo_name: documentation
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: pink
+      accent: pink
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - mermaid2
+  - git-revision-date-localized:
+      enable_creation_date: true
+      locale: pt
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+nav:
+  - Início: index.md
+  - Visão Geral:
+    - Introdução: visao-geral/introducao.md
+    - Conceitos Principais: visao-geral/conceitos-principais.md
+    - Glossário: visao-geral/glossario.md
+  - Arquitetura:
+    - Visão Geral: arquitetura/visao-geral.md
+    - Backend API: arquitetura/backend-api.md
+    - Email API: arquitetura/email-api.md
+    - Frontend: arquitetura/frontend.md
+    - Comunicação: arquitetura/comunicacao-entre-sistemas.md
+  - Pagamentos Iugu:
+    - Visão Geral: pagamentos/visao-geral-iugu.md
+    - Conta Master e Subcontas: pagamentos/conta-master-subcontas.md
+    - Processo KYC: pagamentos/processo-kyc.md
+    - Split de Pagamento: pagamentos/split-pagamento.md
+    - Webhooks: pagamentos/webhooks.md
+  - Banco de Dados:
+    - Visão Geral: banco-de-dados/visao-geral.md
+    - Modelo ER: banco-de-dados/modelo-entidade-relacionamento.md
+    - Tabelas:
+      - Users: banco-de-dados/tabelas/users.md
+      - Videos: banco-de-dados/tabelas/videos.md
+      - Orders: banco-de-dados/tabelas/orders.md
+      - Payments: banco-de-dados/tabelas/payments.md
+      - Owners: banco-de-dados/tabelas/owners.md
+      - Income: banco-de-dados/tabelas/income.md
+      - Notifications: banco-de-dados/tabelas/notifications.md
+      - Relacionamentos: banco-de-dados/tabelas/relacionamentos.md
+  - Perfis de Usuário:
+    - Admin: perfis-de-usuario/admin.md
+    - Usuário Padrão: perfis-de-usuario/default.md
+    - Promoter: perfis-de-usuario/promoter.md
+    - Influencer: perfis-de-usuario/influencer.md
+  - Fluxos de Negócio:
+    - Autenticação: fluxos-de-negocio/autenticacao.md
+    - Cadastro: fluxos-de-negocio/cadastro-usuario.md
+    - KYC Promoter/Influencer: fluxos-de-negocio/kyc-promoter-influencer.md
+    - Compra de Vídeo: fluxos-de-negocio/compra-video.md
+    - Links de Afiliado: fluxos-de-negocio/link-afiliado.md
+    - Gestão de Vídeos: fluxos-de-negocio/gestao-videos.md
+    - Comissões: fluxos-de-negocio/comissoes.md
+  - APIs:
+    - Backend API:
+      - Visão Geral: apis/backend-api/visao-geral.md
+      - Autenticação: apis/backend-api/autenticacao.md
+      - Endpoints:
+        - User: apis/backend-api/endpoints/user.md
+        - Video: apis/backend-api/endpoints/video.md
+        - Order: apis/backend-api/endpoints/order.md
+        - Payment: apis/backend-api/endpoints/payment.md
+        - Admin: apis/backend-api/endpoints/admin.md
+        - Owner: apis/backend-api/endpoints/owner.md
+        - Promoter: apis/backend-api/endpoints/promoter.md
+    - Email API:
+      - Visão Geral: apis/email-api/visao-geral.md
+      - Notificações: apis/email-api/notificacoes.md
+      - Templates: apis/email-api/templates.md
+      - Hangfire Jobs: apis/email-api/hangfire-jobs.md
+  - Guias:
+    - Configuração do Ambiente:
+      - Requisitos: guias/configuracao-ambiente/requisitos.md
+      - Backend: guias/configuracao-ambiente/backend.md
+      - Email API: guias/configuracao-ambiente/email-api.md
+      - Frontend: guias/configuracao-ambiente/frontend.md
+      - Banco de Dados: guias/configuracao-ambiente/banco-dados.md
+    - Desenvolvimento:
+      - Padrões de Código: guias/desenvolvimento/padroes-codigo.md
+      - Estrutura do Projeto: guias/desenvolvimento/estrutura-projeto.md
+      - Adicionar Endpoint: guias/desenvolvimento/adicionar-endpoint.md
+      - Adicionar Entidade: guias/desenvolvimento/adicionar-entidade.md
+      - Criar Migration: guias/desenvolvimento/criar-migration.md
+  - Casos de Uso:
+    - Compra de Vídeo: casos-de-uso/usuario-compra-video.md
+    - Link de Afiliado: casos-de-uso/promoter-gera-link.md
+    - Aprovação KYC: casos-de-uso/promoter-aprovacao-kyc.md
+    - Comissão Influencer: casos-de-uso/influencer-recebe-comissao.md
+    - Gestão Admin: casos-de-uso/admin-gerencia-plataforma.md
+

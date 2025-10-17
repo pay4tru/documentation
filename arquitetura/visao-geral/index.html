@@ -1,0 +1,1873 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentação técnica completa da plataforma Amasso" name="description"/>
+<meta content="Equipe Amasso" name="author"/>
+<link href="../../visao-geral/glossario/" rel="prev"/>
+<link href="../backend-api/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Visão Geral - Documentação Amasso</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="pink" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#arquitetura-visao-geral">
+          Pular para conteúdo
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+<a aria-label="Documentação Amasso" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentação Amasso
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Visão Geral
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="pink" data-md-color-media="" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" title="Limpar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Abas" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../visao-geral/introducao/">
+          
+  
+  
+  Visão Geral
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+  Arquitetura
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../pagamentos/visao-geral-iugu/">
+          
+  
+  
+  Pagamentos Iugu
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../banco-de-dados/visao-geral/">
+          
+  
+  
+  Banco de Dados
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../perfis-de-usuario/admin/">
+          
+  
+  
+  Perfis de Usuário
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../fluxos-de-negocio/autenticacao/">
+          
+  
+  
+  Fluxos de Negócio
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/backend-api/visao-geral/">
+          
+  
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../guias/configuracao-ambiente/requisitos/">
+          
+  
+  
+  Guias
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../casos-de-uso/usuario-compra-video/">
+          
+  
+  
+  Casos de Uso
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegação" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentação Amasso" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Documentação Amasso
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Início
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Visão Geral
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/introducao/">
+<span class="md-ellipsis">
+    Introdução
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/conceitos-principais/">
+<span class="md-ellipsis">
+    Conceitos Principais
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/glossario/">
+<span class="md-ellipsis">
+    Glossário
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-macro-do-sistema">
+<span class="md-ellipsis">
+      Visão Macro do Sistema
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-principais">
+<span class="md-ellipsis">
+      Componentes Principais
+    </span>
+</a>
+<nav aria-label="Componentes Principais" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-frontend-react">
+<span class="md-ellipsis">
+      1. Frontend React
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-backend-api">
+<span class="md-ellipsis">
+      2. Backend API
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-email-api">
+<span class="md-ellipsis">
+      3. Email API
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#banco-de-dados-compartilhado">
+<span class="md-ellipsis">
+      Banco de Dados Compartilhado
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracoes-externas">
+<span class="md-ellipsis">
+      Integrações Externas
+    </span>
+</a>
+<nav aria-label="Integrações Externas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iugu-gateway-de-pagamento">
+<span class="md-ellipsis">
+      Iugu (Gateway de Pagamento)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloudinary-cdn-de-videos">
+<span class="md-ellipsis">
+      Cloudinary (CDN de Vídeos)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-ses-email">
+<span class="md-ellipsis">
+      AWS SES (Email)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#z-api-whatsapp">
+<span class="md-ellipsis">
+      Z-API (WhatsApp)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fluxo-de-comunicacao">
+<span class="md-ellipsis">
+      Fluxo de Comunicação
+    </span>
+</a>
+<nav aria-label="Fluxo de Comunicação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fluxo-de-compra-com-split">
+<span class="md-ellipsis">
+      Fluxo de Compra (Com Split)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fluxo-de-notificacao">
+<span class="md-ellipsis">
+      Fluxo de Notificação
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#padroes-arquiteturais">
+<span class="md-ellipsis">
+      Padrões Arquiteturais
+    </span>
+</a>
+<nav aria-label="Padrões Arquiteturais" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backend-api-clean-architecture">
+<span class="md-ellipsis">
+      Backend API - Clean Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#email-api-job-based-architecture">
+<span class="md-ellipsis">
+      Email API - Job-Based Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend-component-based-architecture">
+<span class="md-ellipsis">
+      Frontend - Component-Based Architecture
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seguranca">
+<span class="md-ellipsis">
+      Segurança
+    </span>
+</a>
+<nav aria-label="Segurança" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacao">
+<span class="md-ellipsis">
+      Autenticação
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autorizacao">
+<span class="md-ellipsis">
+      Autorização
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comunicacao-inter-apis">
+<span class="md-ellipsis">
+      Comunicação Inter-APIs
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#escalabilidade">
+<span class="md-ellipsis">
+      Escalabilidade
+    </span>
+</a>
+<nav aria-label="Escalabilidade" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#horizontal">
+<span class="md-ellipsis">
+      Horizontal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vertical">
+<span class="md-ellipsis">
+      Vertical
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoramento">
+<span class="md-ellipsis">
+      Monitoramento
+    </span>
+</a>
+<nav aria-label="Monitoramento" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logs">
+<span class="md-ellipsis">
+      Logs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metricas">
+<span class="md-ellipsis">
+      Métricas
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ambientes">
+<span class="md-ellipsis">
+      Ambientes
+    </span>
+</a>
+<nav aria-label="Ambientes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desenvolvimento">
+<span class="md-ellipsis">
+      Desenvolvimento
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#producao">
+<span class="md-ellipsis">
+      Produção
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../backend-api/">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../comunicacao-entre-sistemas/">
+<span class="md-ellipsis">
+    Comunicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Pagamentos Iugu
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Pagamentos Iugu
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/visao-geral-iugu/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/conta-master-subcontas/">
+<span class="md-ellipsis">
+    Conta Master e Subcontas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/processo-kyc/">
+<span class="md-ellipsis">
+    Processo KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/split-pagamento/">
+<span class="md-ellipsis">
+    Split de Pagamento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/webhooks/">
+<span class="md-ellipsis">
+    Webhooks
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Banco de Dados
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/modelo-entidade-relacionamento/">
+<span class="md-ellipsis">
+    Modelo ER
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Tabelas
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Tabelas
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/users/">
+<span class="md-ellipsis">
+    Users
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/videos/">
+<span class="md-ellipsis">
+    Videos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/orders/">
+<span class="md-ellipsis">
+    Orders
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/payments/">
+<span class="md-ellipsis">
+    Payments
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/owners/">
+<span class="md-ellipsis">
+    Owners
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/income/">
+<span class="md-ellipsis">
+    Income
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/notifications/">
+<span class="md-ellipsis">
+    Notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/relacionamentos/">
+<span class="md-ellipsis">
+    Relacionamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Perfis de Usuário
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Perfis de Usuário
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/default/">
+<span class="md-ellipsis">
+    Usuário Padrão
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/influencer/">
+<span class="md-ellipsis">
+    Influencer
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Fluxos de Negócio
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Fluxos de Negócio
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/cadastro-usuario/">
+<span class="md-ellipsis">
+    Cadastro
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/kyc-promoter-influencer/">
+<span class="md-ellipsis">
+    KYC Promoter/Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/link-afiliado/">
+<span class="md-ellipsis">
+    Links de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/gestao-videos/">
+<span class="md-ellipsis">
+    Gestão de Vídeos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/comissoes/">
+<span class="md-ellipsis">
+    Comissões
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+            Backend API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1_3" id="__nav_8_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Endpoints
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Endpoints
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/user/">
+<span class="md-ellipsis">
+    User
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/video/">
+<span class="md-ellipsis">
+    Video
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/order/">
+<span class="md-ellipsis">
+    Order
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/payment/">
+<span class="md-ellipsis">
+    Payment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/owner/">
+<span class="md-ellipsis">
+    Owner
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Email API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/notificacoes/">
+<span class="md-ellipsis">
+    Notificações
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/templates/">
+<span class="md-ellipsis">
+    Templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/hangfire-jobs/">
+<span class="md-ellipsis">
+    Hangfire Jobs
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Guias
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Guias
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Configuração do Ambiente
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_1">
+<span class="md-nav__icon md-icon"></span>
+            Configuração do Ambiente
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/requisitos/">
+<span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/banco-dados/">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Desenvolvimento
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_2">
+<span class="md-nav__icon md-icon"></span>
+            Desenvolvimento
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/padroes-codigo/">
+<span class="md-ellipsis">
+    Padrões de Código
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/estrutura-projeto/">
+<span class="md-ellipsis">
+    Estrutura do Projeto
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-endpoint/">
+<span class="md-ellipsis">
+    Adicionar Endpoint
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-entidade/">
+<span class="md-ellipsis">
+    Adicionar Entidade
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/criar-migration/">
+<span class="md-ellipsis">
+    Criar Migration
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Casos de Uso
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            Casos de Uso
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/usuario-compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-gera-link/">
+<span class="md-ellipsis">
+    Link de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-aprovacao-kyc/">
+<span class="md-ellipsis">
+    Aprovação KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/influencer-recebe-comissao/">
+<span class="md-ellipsis">
+    Comissão Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/admin-gerencia-plataforma/">
+<span class="md-ellipsis">
+    Gestão Admin
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-macro-do-sistema">
+<span class="md-ellipsis">
+      Visão Macro do Sistema
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-principais">
+<span class="md-ellipsis">
+      Componentes Principais
+    </span>
+</a>
+<nav aria-label="Componentes Principais" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-frontend-react">
+<span class="md-ellipsis">
+      1. Frontend React
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-backend-api">
+<span class="md-ellipsis">
+      2. Backend API
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-email-api">
+<span class="md-ellipsis">
+      3. Email API
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#banco-de-dados-compartilhado">
+<span class="md-ellipsis">
+      Banco de Dados Compartilhado
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracoes-externas">
+<span class="md-ellipsis">
+      Integrações Externas
+    </span>
+</a>
+<nav aria-label="Integrações Externas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iugu-gateway-de-pagamento">
+<span class="md-ellipsis">
+      Iugu (Gateway de Pagamento)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cloudinary-cdn-de-videos">
+<span class="md-ellipsis">
+      Cloudinary (CDN de Vídeos)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aws-ses-email">
+<span class="md-ellipsis">
+      AWS SES (Email)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#z-api-whatsapp">
+<span class="md-ellipsis">
+      Z-API (WhatsApp)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fluxo-de-comunicacao">
+<span class="md-ellipsis">
+      Fluxo de Comunicação
+    </span>
+</a>
+<nav aria-label="Fluxo de Comunicação" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fluxo-de-compra-com-split">
+<span class="md-ellipsis">
+      Fluxo de Compra (Com Split)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fluxo-de-notificacao">
+<span class="md-ellipsis">
+      Fluxo de Notificação
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#padroes-arquiteturais">
+<span class="md-ellipsis">
+      Padrões Arquiteturais
+    </span>
+</a>
+<nav aria-label="Padrões Arquiteturais" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backend-api-clean-architecture">
+<span class="md-ellipsis">
+      Backend API - Clean Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#email-api-job-based-architecture">
+<span class="md-ellipsis">
+      Email API - Job-Based Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend-component-based-architecture">
+<span class="md-ellipsis">
+      Frontend - Component-Based Architecture
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seguranca">
+<span class="md-ellipsis">
+      Segurança
+    </span>
+</a>
+<nav aria-label="Segurança" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacao">
+<span class="md-ellipsis">
+      Autenticação
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autorizacao">
+<span class="md-ellipsis">
+      Autorização
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comunicacao-inter-apis">
+<span class="md-ellipsis">
+      Comunicação Inter-APIs
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#escalabilidade">
+<span class="md-ellipsis">
+      Escalabilidade
+    </span>
+</a>
+<nav aria-label="Escalabilidade" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#horizontal">
+<span class="md-ellipsis">
+      Horizontal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vertical">
+<span class="md-ellipsis">
+      Vertical
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitoramento">
+<span class="md-ellipsis">
+      Monitoramento
+    </span>
+</a>
+<nav aria-label="Monitoramento" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logs">
+<span class="md-ellipsis">
+      Logs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metricas">
+<span class="md-ellipsis">
+      Métricas
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ambientes">
+<span class="md-ellipsis">
+      Ambientes
+    </span>
+</a>
+<nav aria-label="Ambientes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desenvolvimento">
+<span class="md-ellipsis">
+      Desenvolvimento
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#producao">
+<span class="md-ellipsis">
+      Produção
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="arquitetura-visao-geral">Arquitetura - Visão Geral<a class="headerlink" href="#arquitetura-visao-geral" title="Permanent link">¶</a></h1>
+<h2 id="visao-macro-do-sistema">Visão Macro do Sistema<a class="headerlink" href="#visao-macro-do-sistema" title="Permanent link">¶</a></h2>
+<p>A plataforma Amasso é composta por <strong>três projetos principais</strong> que trabalham em conjunto:</p>
+<pre class="mermaid"><code>graph TB
+    subgraph "Usuário"
+        Browser[Navegador Web]
+    end
+
+    subgraph "Frontend"
+        React[React App&lt;br/&gt;TypeScript + Redux]
+    end
+
+    subgraph "Backend"
+        API[Backend API&lt;br/&gt;.NET 8]
+        EmailAPI[Email API&lt;br/&gt;.NET 8 + Hangfire]
+    end
+
+    subgraph "Dados"
+        DB[(PostgreSQL 16)]
+    end
+
+    subgraph "Serviços Externos"
+        Cloudinary[Cloudinary&lt;br/&gt;CDN de Vídeos]
+        Iugu[Iugu&lt;br/&gt;Gateway Pagamento]
+        SMTP[AWS SES&lt;br/&gt;Email]
+        ZApi[Z-API&lt;br/&gt;WhatsApp]
+    end
+
+    Browser --&gt; React
+    React --&gt; API
+    API --&gt; DB
+    API --&gt; Cloudinary
+    API --&gt; Iugu
+    API --&gt; EmailAPI
+    EmailAPI --&gt; DB
+    EmailAPI --&gt; SMTP
+    EmailAPI --&gt; ZApi
+
+    style React fill:#61dafb
+    style API fill:#512bd4
+    style EmailAPI fill:#512bd4
+    style DB fill:#336791</code></pre>
+<h2 id="componentes-principais">Componentes Principais<a class="headerlink" href="#componentes-principais" title="Permanent link">¶</a></h2>
+<h3 id="1-frontend-react">1. Frontend React<a class="headerlink" href="#1-frontend-react" title="Permanent link">¶</a></h3>
+<p><strong>Localização</strong>: <code>frontend-react/</code></p>
+<ul>
+<li><strong>Tecnologia</strong>: React 18 + TypeScript</li>
+<li><strong>Estado</strong>: Redux Toolkit</li>
+<li><strong>Build</strong>: Vite</li>
+<li><strong>Responsabilidades</strong>:</li>
+<li>Interface do usuário</li>
+<li>Comunicação com Backend API via Axios</li>
+<li>Roteamento (React Router)</li>
+<li>Validações client-side</li>
+</ul>
+<h3 id="2-backend-api">2. Backend API<a class="headerlink" href="#2-backend-api" title="Permanent link">¶</a></h3>
+<p><strong>Localização</strong>: <code>backend-api/</code></p>
+<ul>
+<li><strong>Tecnologia</strong>: ASP.NET Core 8.0</li>
+<li><strong>ORM</strong>: Entity Framework Core</li>
+<li><strong>Responsabilidades</strong>:</li>
+<li>Regras de negócio</li>
+<li>Gerenciamento de usuários e autenticação</li>
+<li>CRUD de vídeos e pedidos</li>
+<li>Integração com Iugu (pagamentos, subcontas, KYC)</li>
+<li>Integração com Cloudinary (upload de vídeos)</li>
+<li>Criação de notificações no banco</li>
+</ul>
+<h3 id="3-email-api">3. Email API<a class="headerlink" href="#3-email-api" title="Permanent link">¶</a></h3>
+<p><strong>Localização</strong>: <code>email-api/</code></p>
+<ul>
+<li><strong>Tecnologia</strong>: ASP.NET Core 8.0 + Hangfire</li>
+<li><strong>Responsabilidades</strong>:</li>
+<li>Envio assíncrono de notificações</li>
+<li>Jobs agendados (Hangfire)</li>
+<li>Templates de email (HTML)</li>
+<li>Templates de WhatsApp (texto)</li>
+<li>Integração com SMTP e Z-API</li>
+</ul>
+<h2 id="banco-de-dados-compartilhado">Banco de Dados Compartilhado<a class="headerlink" href="#banco-de-dados-compartilhado" title="Permanent link">¶</a></h2>
+<p>Ambas as APIs (Backend e Email) compartilham o mesmo banco PostgreSQL:</p>
+<ul>
+<li><strong>Backend API</strong>: Leitura e escrita completa</li>
+<li><strong>Email API</strong>: Leitura de notificações + escrita de logs</li>
+</ul>
+<p><strong>Tabelas Principais</strong>:
+- <code>users</code> - Usuários da plataforma
+- <code>owners</code> - Dados de KYC e subcontas
+- <code>videos</code> - Catálogo de vídeos
+- <code>orders</code> - Pedidos de compra
+- <code>payments</code> - Pagamentos via Iugu
+- <code>income</code> - Distribuição de comissões
+- <code>notifications</code> - Fila de notificações
+- <code>logs</code> - Logs de sistema</p>
+<h2 id="integracoes-externas">Integrações Externas<a class="headerlink" href="#integracoes-externas" title="Permanent link">¶</a></h2>
+<h3 id="iugu-gateway-de-pagamento">Iugu (Gateway de Pagamento)<a class="headerlink" href="#iugu-gateway-de-pagamento" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>graph LR
+    Backend[Backend API] --&gt;|1. Cria Invoice| Iugu[Iugu API]
+    Iugu --&gt;|2. Webhook Status| Backend
+    Backend --&gt;|3. Valida| DB[(Database)]
+    Iugu --&gt;|Split Automático| Master[Conta Master]
+    Iugu --&gt;|Split Automático| Sub1[Subconta Owner]
+    Iugu --&gt;|Split Automático| Sub2[Subconta Promoter]</code></pre>
+<p><strong>Funcionalidades Usadas</strong>:
+- Criação de invoices (faturas)
+- Sistema de split de pagamento
+- Conta master + subcontas
+- Webhooks de confirmação
+- Gestão de subcontas (KYC)</p>
+<h3 id="cloudinary-cdn-de-videos">Cloudinary (CDN de Vídeos)<a class="headerlink" href="#cloudinary-cdn-de-videos" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>graph LR
+    Admin[Admin] --&gt;|Upload| Backend[Backend API]
+    Backend --&gt;|Store| Cloudinary[Cloudinary CDN]
+    Cloudinary --&gt;|URL Protegida| Backend
+    Backend --&gt;|URL| User[Usuário]
+    User --&gt;|Stream| Cloudinary</code></pre>
+<p><strong>Funcionalidades Usadas</strong>:
+- Upload de vídeos e imagens
+- Armazenamento seguro
+- URLs protegidas
+- Streaming otimizado
+- Transformações de vídeo</p>
+<h3 id="aws-ses-email">AWS SES (Email)<a class="headerlink" href="#aws-ses-email" title="Permanent link">¶</a></h3>
+<p>Backend API cria notificação → Email API processa → AWS SES envia</p>
+<h3 id="z-api-whatsapp">Z-API (WhatsApp)<a class="headerlink" href="#z-api-whatsapp" title="Permanent link">¶</a></h3>
+<p>Backend API cria notificação → Email API processa → Z-API envia</p>
+<h2 id="fluxo-de-comunicacao">Fluxo de Comunicação<a class="headerlink" href="#fluxo-de-comunicacao" title="Permanent link">¶</a></h2>
+<h3 id="fluxo-de-compra-com-split">Fluxo de Compra (Com Split)<a class="headerlink" href="#fluxo-de-compra-com-split" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant U as Usuário
+    participant F as Frontend
+    participant B as Backend API
+    participant I as Iugu
+    participant D as PostgreSQL
+    participant E as Email API
+
+    U-&gt;&gt;F: Clica em "Comprar Vídeo"
+    F-&gt;&gt;B: POST /api/orders
+    B-&gt;&gt;D: Cria Order
+    B-&gt;&gt;I: Cria Invoice com Split
+    Note over I: Split configurado:&lt;br/&gt;Master + Subcontas
+    I--&gt;&gt;B: Retorna URL de pagamento
+    B-&gt;&gt;D: Cria Notification
+    B--&gt;&gt;F: URL de pagamento
+    F--&gt;&gt;U: Redireciona para Iugu
+
+    U-&gt;&gt;I: Realiza pagamento
+    I-&gt;&gt;I: Executa Split
+    I-&gt;&gt;B: Webhook: payment.paid
+    B-&gt;&gt;D: Atualiza Payment
+    B-&gt;&gt;D: Cria Income para cada parte
+
+    Note over E: Job agendado roda
+    E-&gt;&gt;D: Busca notificações pendentes
+    E-&gt;&gt;E: Renderiza template
+    E-&gt;&gt;U: Envia email/WhatsApp</code></pre>
+<h3 id="fluxo-de-notificacao">Fluxo de Notificação<a class="headerlink" href="#fluxo-de-notificacao" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant B as Backend API
+    participant D as PostgreSQL
+    participant E as Email API
+    participant H as Hangfire
+    participant S as SMTP/Z-API
+    participant U as Usuário
+
+    B-&gt;&gt;D: INSERT INTO notifications
+    Note over D: Status: Pendente&lt;br/&gt;SendAttempts: 0
+
+    Note over H: Cron job executa&lt;br/&gt;(ex: */2 * * * *)
+    H-&gt;&gt;E: Trigger Job
+    E-&gt;&gt;D: SELECT * FROM notifications&lt;br/&gt;WHERE status = pending
+    E-&gt;&gt;E: Renderiza template
+    E-&gt;&gt;S: Envia
+
+    alt Sucesso
+        S--&gt;&gt;E: OK
+        E-&gt;&gt;D: UPDATE DateSent
+    else Falha
+        S--&gt;&gt;E: Erro
+        E-&gt;&gt;D: UPDATE SendAttempts++
+        Note over E: Retry até 3x
+    end
+
+    S-&gt;&gt;U: Notificação entregue</code></pre>
+<h2 id="padroes-arquiteturais">Padrões Arquiteturais<a class="headerlink" href="#padroes-arquiteturais" title="Permanent link">¶</a></h2>
+<h3 id="backend-api-clean-architecture">Backend API - Clean Architecture<a class="headerlink" href="#backend-api-clean-architecture" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>Endpoints (Presentation Layer)
+    ↓
+Services (Business Logic Layer)
+    ↓
+Repositories/Data (Data Access Layer)
+    ↓
+Database
+</code></pre></div>
+<h3 id="email-api-job-based-architecture">Email API - Job-Based Architecture<a class="headerlink" href="#email-api-job-based-architecture" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>HTTP Endpoints (Trigger manual)
+    ↓
+Hangfire Jobs (Scheduled/Background)
+    ↓
+Services (Email/WhatsApp Senders)
+    ↓
+External APIs (SMTP/Z-API)
+</code></pre></div>
+<h3 id="frontend-component-based-architecture">Frontend - Component-Based Architecture<a class="headerlink" href="#frontend-component-based-architecture" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>Pages (Route level)
+    ↓
+Components (Reusable UI)
+    ↓
+Redux Store (Global State)
+    ↓
+API Services (HTTP Calls)
+</code></pre></div>
+<h2 id="seguranca">Segurança<a class="headerlink" href="#seguranca" title="Permanent link">¶</a></h2>
+<h3 id="autenticacao">Autenticação<a class="headerlink" href="#autenticacao" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>JWT Tokens</strong>: Gerados no Backend API, validados em cada request</li>
+<li><strong>MFA</strong>: Código adicional enviado via Email API</li>
+<li><strong>Refresh Tokens</strong>: Para renovação de sessão</li>
+</ul>
+<h3 id="autorizacao">Autorização<a class="headerlink" href="#autorizacao" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Role-Based</strong>: Admin, Default, Promoter, Influencer</li>
+<li><strong>Claims</strong>: Informações do usuário no token</li>
+<li><strong>Middleware</strong>: Validação em cada endpoint</li>
+</ul>
+<h3 id="comunicacao-inter-apis">Comunicação Inter-APIs<a class="headerlink" href="#comunicacao-inter-apis" title="Permanent link">¶</a></h3>
+<ul>
+<li>Backend API → Email API: Através do banco (notifications table)</li>
+<li>Email API lê, Backend API escreve</li>
+<li>Sem comunicação HTTP direta</li>
+</ul>
+<h2 id="escalabilidade">Escalabilidade<a class="headerlink" href="#escalabilidade" title="Permanent link">¶</a></h2>
+<h3 id="horizontal">Horizontal<a class="headerlink" href="#horizontal" title="Permanent link">¶</a></h3>
+<ul>
+<li>Frontend: CDN / Multiple instances</li>
+<li>Backend API: Load balancer + múltiplas instâncias</li>
+<li>Email API: Múltiplos workers Hangfire</li>
+<li>Database: Replicação read/write</li>
+</ul>
+<h3 id="vertical">Vertical<a class="headerlink" href="#vertical" title="Permanent link">¶</a></h3>
+<ul>
+<li>Otimização de queries</li>
+<li>Caching (Redis futuro)</li>
+<li>Compressão de responses</li>
+<li>Lazy loading no frontend</li>
+</ul>
+<h2 id="monitoramento">Monitoramento<a class="headerlink" href="#monitoramento" title="Permanent link">¶</a></h2>
+<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">¶</a></h3>
+<ul>
+<li>Backend API: Console + Database (logs table)</li>
+<li>Email API: Console + Database (logs table)</li>
+<li>Estruturados com contexto (RequestId, Level, Event, Payload)</li>
+</ul>
+<h3 id="metricas">Métricas<a class="headerlink" href="#metricas" title="Permanent link">¶</a></h3>
+<ul>
+<li>Hangfire Dashboard: Jobs executados, falhas, tempo</li>
+<li>Application Insights: Performance, erros (futuro)</li>
+<li>Database: Queries lentas, connections</li>
+</ul>
+<h2 id="ambientes">Ambientes<a class="headerlink" href="#ambientes" title="Permanent link">¶</a></h2>
+<h3 id="desenvolvimento">Desenvolvimento<a class="headerlink" href="#desenvolvimento" title="Permanent link">¶</a></h3>
+<ul>
+<li>Frontend: <code>localhost:5173</code> (Vite)</li>
+<li>Backend API: <code>localhost:7080</code></li>
+<li>Email API: <code>localhost:5014</code></li>
+<li>Database: <code>localhost:5432</code> (ou Docker)</li>
+</ul>
+<h3 id="producao">Produção<a class="headerlink" href="#producao" title="Permanent link">¶</a></h3>
+<ul>
+<li>Frontend: Azure Static Web Apps / Cloudflare</li>
+<li>Backend API: Azure App Service</li>
+<li>Email API: Azure App Service</li>
+<li>Database: Azure PostgreSQL / AWS RDS</li>
+</ul>
+<h2 id="proximos-passos">Próximos Passos<a class="headerlink" href="#proximos-passos" title="Permanent link">¶</a></h2>
+<p>Explore cada componente em detalhes:
+- <a href="../backend-api/">Backend API</a> - Estrutura e endpoints
+- <a href="../email-api/">Email API</a> - Jobs e notificações
+- <a href="../frontend/">Frontend</a> - Componentes e rotas
+- <a href="../comunicacao-entre-sistemas/">Comunicação</a> - Fluxos detalhados</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Última atualização">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:57:36 UTC">17 de outubro de 2025</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Criado em">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:57:36 UTC">17 de outubro de 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Voltar para o topo
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>

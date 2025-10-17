@@ -1,0 +1,1822 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentação técnica completa da plataforma Amasso" name="description"/>
+<meta content="Equipe Amasso" name="author"/>
+<link href="../visao-geral-iugu/" rel="prev"/>
+<link href="../processo-kyc/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Conta Master e Subcontas - Documentação Amasso</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="pink" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#conta-master-e-subcontas">
+          Pular para conteúdo
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+<a aria-label="Documentação Amasso" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentação Amasso
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Conta Master e Subcontas
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="pink" data-md-color-media="" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" title="Limpar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Abas" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../visao-geral/introducao/">
+          
+  
+  
+  Visão Geral
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../arquitetura/visao-geral/">
+          
+  
+  
+  Arquitetura
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../visao-geral-iugu/">
+          
+  
+  
+  Pagamentos Iugu
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../banco-de-dados/visao-geral/">
+          
+  
+  
+  Banco de Dados
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../perfis-de-usuario/admin/">
+          
+  
+  
+  Perfis de Usuário
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../fluxos-de-negocio/autenticacao/">
+          
+  
+  
+  Fluxos de Negócio
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/backend-api/visao-geral/">
+          
+  
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../guias/configuracao-ambiente/requisitos/">
+          
+  
+  
+  Guias
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../casos-de-uso/usuario-compra-video/">
+          
+  
+  
+  Casos de Uso
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegação" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentação Amasso" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Documentação Amasso
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Início
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Visão Geral
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/introducao/">
+<span class="md-ellipsis">
+    Introdução
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/conceitos-principais/">
+<span class="md-ellipsis">
+    Conceitos Principais
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/glossario/">
+<span class="md-ellipsis">
+    Glossário
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/backend-api/">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/comunicacao-entre-sistemas/">
+<span class="md-ellipsis">
+    Comunicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    Pagamentos Iugu
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Pagamentos Iugu
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../visao-geral-iugu/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Conta Master e Subcontas
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Conta Master e Subcontas
+    
+  </span>
+</a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitetura-de-contas">
+<span class="md-ellipsis">
+      Arquitetura de Contas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conta-master-plataforma">
+<span class="md-ellipsis">
+      Conta Master (Plataforma)
+    </span>
+</a>
+<nav aria-label="Conta Master (Plataforma)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas">
+<span class="md-ellipsis">
+      Características
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      Responsabilidades
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracao">
+<span class="md-ellipsis">
+      Configuração
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acesso-ao-dashboard">
+<span class="md-ellipsis">
+      Acesso ao Dashboard
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subcontas-promoters-e-influencers">
+<span class="md-ellipsis">
+      Subcontas (Promoters e Influencers)
+    </span>
+</a>
+<nav aria-label="Subcontas (Promoters e Influencers)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas_1">
+<span class="md-ellipsis">
+      Características
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quando-criar">
+<span class="md-ellipsis">
+      Quando Criar
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapeamento-no-banco-de-dados">
+<span class="md-ellipsis">
+      Mapeamento no Banco de Dados
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ciclo-de-vida-de-uma-subconta">
+<span class="md-ellipsis">
+      Ciclo de Vida de uma Subconta
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criacao-de-subconta">
+<span class="md-ellipsis">
+      Criação de Subconta
+    </span>
+</a>
+<nav aria-label="Criação de Subconta" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-usuario-se-cadastra">
+<span class="md-ellipsis">
+      1. Usuário Se Cadastra
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-criacao-da-subconta-no-iugu">
+<span class="md-ellipsis">
+      2. Criação da Subconta no Iugu
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-chamada-a-api-do-iugu">
+<span class="md-ellipsis">
+      3. Chamada à API do Iugu
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ativacao-de-subconta">
+<span class="md-ellipsis">
+      Ativação de Subconta
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestao-de-subcontas">
+<span class="md-ellipsis">
+      Gestão de Subcontas
+    </span>
+</a>
+<nav aria-label="Gestão de Subcontas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#listar-subcontas-pendentes">
+<span class="md-ellipsis">
+      Listar Subcontas Pendentes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-status-no-iugu">
+<span class="md-ellipsis">
+      Consultar Status no Iugu
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vantagens-do-modelo">
+<span class="md-ellipsis">
+      Vantagens do Modelo
+    </span>
+</a>
+<nav aria-label="Vantagens do Modelo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-a-plataforma-amasso">
+<span class="md-ellipsis">
+      Para a Plataforma (Amasso)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-promotersinfluencers">
+<span class="md-ellipsis">
+      Para Promoters/Influencers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-usuarios-finais">
+<span class="md-ellipsis">
+      Para Usuários Finais
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processo-kyc/">
+<span class="md-ellipsis">
+    Processo KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../split-pagamento/">
+<span class="md-ellipsis">
+    Split de Pagamento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../webhooks/">
+<span class="md-ellipsis">
+    Webhooks
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Banco de Dados
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/modelo-entidade-relacionamento/">
+<span class="md-ellipsis">
+    Modelo ER
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Tabelas
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Tabelas
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/users/">
+<span class="md-ellipsis">
+    Users
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/videos/">
+<span class="md-ellipsis">
+    Videos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/orders/">
+<span class="md-ellipsis">
+    Orders
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/payments/">
+<span class="md-ellipsis">
+    Payments
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/owners/">
+<span class="md-ellipsis">
+    Owners
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/income/">
+<span class="md-ellipsis">
+    Income
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/notifications/">
+<span class="md-ellipsis">
+    Notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/relacionamentos/">
+<span class="md-ellipsis">
+    Relacionamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Perfis de Usuário
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Perfis de Usuário
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/default/">
+<span class="md-ellipsis">
+    Usuário Padrão
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/influencer/">
+<span class="md-ellipsis">
+    Influencer
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Fluxos de Negócio
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Fluxos de Negócio
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/cadastro-usuario/">
+<span class="md-ellipsis">
+    Cadastro
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/kyc-promoter-influencer/">
+<span class="md-ellipsis">
+    KYC Promoter/Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/link-afiliado/">
+<span class="md-ellipsis">
+    Links de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/gestao-videos/">
+<span class="md-ellipsis">
+    Gestão de Vídeos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/comissoes/">
+<span class="md-ellipsis">
+    Comissões
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+            Backend API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1_3" id="__nav_8_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Endpoints
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Endpoints
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/user/">
+<span class="md-ellipsis">
+    User
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/video/">
+<span class="md-ellipsis">
+    Video
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/order/">
+<span class="md-ellipsis">
+    Order
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/payment/">
+<span class="md-ellipsis">
+    Payment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/owner/">
+<span class="md-ellipsis">
+    Owner
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Email API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/notificacoes/">
+<span class="md-ellipsis">
+    Notificações
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/templates/">
+<span class="md-ellipsis">
+    Templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/hangfire-jobs/">
+<span class="md-ellipsis">
+    Hangfire Jobs
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Guias
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Guias
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Configuração do Ambiente
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_1">
+<span class="md-nav__icon md-icon"></span>
+            Configuração do Ambiente
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/requisitos/">
+<span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/banco-dados/">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Desenvolvimento
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_2">
+<span class="md-nav__icon md-icon"></span>
+            Desenvolvimento
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/padroes-codigo/">
+<span class="md-ellipsis">
+    Padrões de Código
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/estrutura-projeto/">
+<span class="md-ellipsis">
+    Estrutura do Projeto
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-endpoint/">
+<span class="md-ellipsis">
+    Adicionar Endpoint
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-entidade/">
+<span class="md-ellipsis">
+    Adicionar Entidade
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/criar-migration/">
+<span class="md-ellipsis">
+    Criar Migration
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Casos de Uso
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            Casos de Uso
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/usuario-compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-gera-link/">
+<span class="md-ellipsis">
+    Link de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-aprovacao-kyc/">
+<span class="md-ellipsis">
+    Aprovação KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/influencer-recebe-comissao/">
+<span class="md-ellipsis">
+    Comissão Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/admin-gerencia-plataforma/">
+<span class="md-ellipsis">
+    Gestão Admin
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitetura-de-contas">
+<span class="md-ellipsis">
+      Arquitetura de Contas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conta-master-plataforma">
+<span class="md-ellipsis">
+      Conta Master (Plataforma)
+    </span>
+</a>
+<nav aria-label="Conta Master (Plataforma)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas">
+<span class="md-ellipsis">
+      Características
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      Responsabilidades
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracao">
+<span class="md-ellipsis">
+      Configuração
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acesso-ao-dashboard">
+<span class="md-ellipsis">
+      Acesso ao Dashboard
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subcontas-promoters-e-influencers">
+<span class="md-ellipsis">
+      Subcontas (Promoters e Influencers)
+    </span>
+</a>
+<nav aria-label="Subcontas (Promoters e Influencers)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#caracteristicas_1">
+<span class="md-ellipsis">
+      Características
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quando-criar">
+<span class="md-ellipsis">
+      Quando Criar
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapeamento-no-banco-de-dados">
+<span class="md-ellipsis">
+      Mapeamento no Banco de Dados
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ciclo-de-vida-de-uma-subconta">
+<span class="md-ellipsis">
+      Ciclo de Vida de uma Subconta
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criacao-de-subconta">
+<span class="md-ellipsis">
+      Criação de Subconta
+    </span>
+</a>
+<nav aria-label="Criação de Subconta" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-usuario-se-cadastra">
+<span class="md-ellipsis">
+      1. Usuário Se Cadastra
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-criacao-da-subconta-no-iugu">
+<span class="md-ellipsis">
+      2. Criação da Subconta no Iugu
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-chamada-a-api-do-iugu">
+<span class="md-ellipsis">
+      3. Chamada à API do Iugu
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ativacao-de-subconta">
+<span class="md-ellipsis">
+      Ativação de Subconta
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestao-de-subcontas">
+<span class="md-ellipsis">
+      Gestão de Subcontas
+    </span>
+</a>
+<nav aria-label="Gestão de Subcontas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#listar-subcontas-pendentes">
+<span class="md-ellipsis">
+      Listar Subcontas Pendentes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-status-no-iugu">
+<span class="md-ellipsis">
+      Consultar Status no Iugu
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vantagens-do-modelo">
+<span class="md-ellipsis">
+      Vantagens do Modelo
+    </span>
+</a>
+<nav aria-label="Vantagens do Modelo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-a-plataforma-amasso">
+<span class="md-ellipsis">
+      Para a Plataforma (Amasso)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-promotersinfluencers">
+<span class="md-ellipsis">
+      Para Promoters/Influencers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-usuarios-finais">
+<span class="md-ellipsis">
+      Para Usuários Finais
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="conta-master-e-subcontas">Conta Master e Subcontas<a class="headerlink" href="#conta-master-e-subcontas" title="Permanent link">¶</a></h1>
+<h2 id="arquitetura-de-contas">Arquitetura de Contas<a class="headerlink" href="#arquitetura-de-contas" title="Permanent link">¶</a></h2>
+<p>O modelo de conta master + subcontas do Iugu é fundamental para o funcionamento do Amasso como marketplace.</p>
+<pre class="mermaid"><code>graph TD
+    CM[Conta Master - Amasso] --&gt; S1[Subconta Promoter 1]
+    CM --&gt; S2[Subconta Promoter 2]
+    CM --&gt; S3[Subconta Promoter 3]
+    CM --&gt; S4[Subconta Influencer 1]
+    CM --&gt; S5[Subconta Influencer 2]
+    CM --&gt; S6[Subconta Influencer 3]
+
+    U[Usuário] --&gt;|Paga| Invoice[Invoice]
+    Invoice --&gt;|Split 20%| CM
+    Invoice --&gt;|Split 50%| S4
+    Invoice --&gt;|Split 30%| S1
+
+    style CM fill:#3498db
+    style S1 fill:#e74c3c
+    style S2 fill:#e74c3c
+    style S3 fill:#e74c3c
+    style S4 fill:#2ecc71
+    style S5 fill:#2ecc71
+    style S6 fill:#2ecc71</code></pre>
+<h2 id="conta-master-plataforma">Conta Master (Plataforma)<a class="headerlink" href="#conta-master-plataforma" title="Permanent link">¶</a></h2>
+<h3 id="caracteristicas">Características<a class="headerlink" href="#caracteristicas" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Proprietário</strong>: Empresa Amasso</li>
+<li><strong>Responsabilidade</strong>: Centralizar pagamentos e distribuir</li>
+<li><strong>Recebe</strong>: Sua porcentagem configurada (ex: 20%)</li>
+<li><strong>Gerencia</strong>: Todas as subcontas vinculadas</li>
+</ul>
+<h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Receber Pagamentos</strong>: Todos os pagamentos passam pela master</li>
+<li><strong>Distribuir via Split</strong>: Automático no momento do pagamento</li>
+<li><strong>Criar Subcontas</strong>: Para novos Promoters/Influencers</li>
+<li><strong>Aprovar KYC</strong>: Validar documentação</li>
+<li><strong>Compliance</strong>: Garantir conformidade legal</li>
+</ol>
+<h3 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// appsettings.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="s">"Iugu"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s">"ApiToken"</span><span class="p">:</span><span class="w"> </span><span class="s">"SEU_TOKEN_AQUI"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"MasterAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s">"ID_DA_CONTA_MASTER"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"WebhookSecret"</span><span class="p">:</span><span class="w"> </span><span class="s">"SECRET_PARA_VALIDAR_WEBHOOKS"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="acesso-ao-dashboard">Acesso ao Dashboard<a class="headerlink" href="#acesso-ao-dashboard" title="Permanent link">¶</a></h3>
+<p>A conta master acessa o dashboard administrativo do Iugu:
+- Visualizar todas as transações
+- Gerenciar subcontas
+- Configurar webhooks
+- Extratos e relatórios
+- Saques para conta bancária</p>
+<h2 id="subcontas-promoters-e-influencers">Subcontas (Promoters e Influencers)<a class="headerlink" href="#subcontas-promoters-e-influencers" title="Permanent link">¶</a></h2>
+<h3 id="caracteristicas_1">Características<a class="headerlink" href="#caracteristicas_1" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Vinculadas</strong>: Sempre ligadas à conta master</li>
+<li><strong>Autônomas</strong>: Podem gerenciar seus próprios dados</li>
+<li><strong>Recebem Automaticamente</strong>: Via split de pagamento</li>
+<li><strong>Requerem KYC</strong>: Obrigatório para operação</li>
+</ul>
+<h3 id="quando-criar">Quando Criar<a class="headerlink" href="#quando-criar" title="Permanent link">¶</a></h3>
+<p>Uma subconta é criada quando:
+1. Promoter se cadastra
+2. Influencer se cadastra
+3. Status inicial: <strong>Pendente</strong>
+4. Aguarda envio de documentos
+5. Admin aprova KYC
+6. Status muda para: <strong>Aprovado</strong>
+7. Subconta é ativada no Iugu</p>
+<h3 id="mapeamento-no-banco-de-dados">Mapeamento no Banco de Dados<a class="headerlink" href="#mapeamento-no-banco-de-dados" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Tabela owners armazena dados da subconta</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">owners</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">BIGSERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+<span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"> </span><span class="c1">-- Influencer, Promoter, Partner, Agent, Other</span>
+
+<span class="w">    </span><span class="c1">-- Subconta Iugu</span>
+<span class="w">    </span><span class="n">iugu_account_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="c1">-- ID da subconta no Iugu</span>
+<span class="w">    </span><span class="n">sub_account_status</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="c1">-- Pendente, Aprovado, Rejeitado</span>
+
+<span class="w">    </span><span class="c1">-- Dados pessoais (KYC)</span>
+<span class="w">    </span><span class="n">cpf_cnpj</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">rg</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">birth_date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">address_street</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address_number</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address_city</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address_state</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address_zipcode</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+
+<span class="w">    </span><span class="c1">-- Dados bancários</span>
+<span class="w">    </span><span class="n">bank_code</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w">    </span><span class="n">bank_agency</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w">    </span><span class="n">bank_account</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">bank_account_type</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="c1">-- corrente, poupança</span>
+
+<span class="w">    </span><span class="c1">-- Documentos</span>
+<span class="w">    </span><span class="n">document_cpf_url</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">document_rg_url</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">document_address_proof_url</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">document_selfie_url</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">-- Auditoria</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">TIMESTAMP</span>
+<span class="p">);</span>
+</code></pre></div>
+<h2 id="ciclo-de-vida-de-uma-subconta">Ciclo de Vida de uma Subconta<a class="headerlink" href="#ciclo-de-vida-de-uma-subconta" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Criada: Usuário se cadastra&lt;br/&gt;como Promoter/Influencer
+    Criada --&gt; Pendente: Subconta criada no Iugu&lt;br/&gt;(modo pendente)
+    Pendente --&gt; DocumentosEnviados: Usuário envia&lt;br/&gt;documentos
+    DocumentosEnviados --&gt; EmAnalise: Admin inicia&lt;br/&gt;revisão
+    EmAnalise --&gt; Aprovado: Documentos válidos
+    EmAnalise --&gt; Rejeitado: Documentos inválidos
+    Aprovado --&gt; Ativa: Subconta ativada&lt;br/&gt;no Iugu
+    Ativa --&gt; Operando: Pode receber&lt;br/&gt;pagamentos
+    Rejeitado --&gt; DocumentosEnviados: Reenviar&lt;br/&gt;documentos
+    Operando --&gt; [*]: Desativação</code></pre>
+<h2 id="criacao-de-subconta">Criação de Subconta<a class="headerlink" href="#criacao-de-subconta" title="Permanent link">¶</a></h2>
+<h3 id="1-usuario-se-cadastra">1. Usuário Se Cadastra<a class="headerlink" href="#1-usuario-se-cadastra" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// UserService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreatePromoterAsync</span><span class="p">(</span><span class="n">CreateUserDto</span><span class="w"> </span><span class="n">dto</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Criar User</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserTypeEnum</span><span class="p">.</span><span class="n">Promoter</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// ... outros campos</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Users</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Criar Owner (ainda sem subconta)</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Owner</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UserId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OwnerTypeEnum</span><span class="p">.</span><span class="n">Promoter</span><span class="p">,</span>
+<span class="w">        </span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Pending</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// ... outros campos</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Owners</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">user</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="2-criacao-da-subconta-no-iugu">2. Criação da Subconta no Iugu<a class="headerlink" href="#2-criacao-da-subconta-no-iugu" title="Permanent link">¶</a></h3>
+<p>Quando o usuário envia os documentos:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// OwnerService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SubmitKycDocumentsAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">ownerId</span><span class="p">,</span><span class="w"> </span><span class="n">KycDocumentsDto</span><span class="w"> </span><span class="n">dto</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Owners</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">ownerId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Salvar documentos</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">DocumentCpfUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">CpfUrl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">DocumentRgUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">RgUrl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">DocumentAddressProofUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">AddressProofUrl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">DocumentSelfieUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">SelfieUrl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Criar subconta no Iugu (se ainda não existe)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">owner</span><span class="p">.</span><span class="n">IuguAccountId</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">subAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_iuguService</span><span class="p">.</span><span class="n">CreateSubAccountAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreateSubAccountDto</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Fullname</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">CpfCnpj</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AddressDto</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Street</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">AddressStreet</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">AddressNumber</span><span class="p">,</span>
+<span class="w">                </span><span class="n">City</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">AddressCity</span><span class="p">,</span>
+<span class="w">                </span><span class="n">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">AddressState</span><span class="p">,</span>
+<span class="w">                </span><span class="n">ZipCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">AddressZipcode</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="n">BankAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BankAccountDto</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">BankCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">BankCode</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Agency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">BankAgency</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">BankAccount</span><span class="p">,</span>
+<span class="w">                </span><span class="n">AccountType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">BankAccountType</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="n">owner</span><span class="p">.</span><span class="n">IuguAccountId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">subAccount</span><span class="p">.</span><span class="n">AccountId</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Pending</span><span class="p">;</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Notificar admin para revisar</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_notificationService</span><span class="p">.</span><span class="n">NotifyAdminKycPendingAsync</span><span class="p">(</span><span class="n">ownerId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-chamada-a-api-do-iugu">3. Chamada à API do Iugu<a class="headerlink" href="#3-chamada-a-api-do-iugu" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// IuguService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IuguSubAccountDto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreateSubAccountAsync</span><span class="p">(</span><span class="n">CreateSubAccountDto</span><span class="w"> </span><span class="n">dto</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+<span class="w">        </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span>
+<span class="w">        </span><span class="n">cpf_cnpj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Cpf</span><span class="p">,</span>
+<span class="w">        </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">street</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Address</span><span class="p">.</span><span class="n">Street</span><span class="p">,</span>
+<span class="w">            </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Address</span><span class="p">.</span><span class="n">Number</span><span class="p">,</span>
+<span class="w">            </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Address</span><span class="p">.</span><span class="n">City</span><span class="p">,</span>
+<span class="w">            </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Address</span><span class="p">.</span><span class="n">State</span><span class="p">,</span>
+<span class="w">            </span><span class="n">zip_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Address</span><span class="p">.</span><span class="n">ZipCode</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="n">bank_account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">bank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">BankAccount</span><span class="p">.</span><span class="n">BankCode</span><span class="p">,</span>
+<span class="w">            </span><span class="n">bank_ag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">BankAccount</span><span class="p">.</span><span class="n">Agency</span><span class="p">,</span>
+<span class="w">            </span><span class="n">account_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">BankAccount</span><span class="p">.</span><span class="n">AccountType</span><span class="p">,</span>
+<span class="w">            </span><span class="n">bank_cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">BankAccount</span><span class="p">.</span><span class="n">Account</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="c1">// Criar em modo de verificação pendente</span>
+<span class="w">        </span><span class="n">auto_verify</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">PostAsJsonAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="s">"https://api.iugu.com/v1/marketplace/create_account"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">request</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">response</span><span class="p">.</span><span class="n">EnsureSuccessStatusCode</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadFromJsonAsync</span><span class="o">&lt;</span><span class="n">IuguSubAccountResponse</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IuguSubAccountDto</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">AccountId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">account_id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">LiveApiToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">live_api_token</span><span class="p">,</span>
+<span class="w">        </span><span class="n">TestApiToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">test_api_token</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="ativacao-de-subconta">Ativação de Subconta<a class="headerlink" href="#ativacao-de-subconta" title="Permanent link">¶</a></h2>
+<p>Após admin aprovar o KYC:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// AdminService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ApproveKycAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">ownerId</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Owners</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">User</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">FirstAsync</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ownerId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">owner</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Pending</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"KYC não está pendente"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Ativar subconta no Iugu</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_iuguService</span><span class="p">.</span><span class="n">VerifySubAccountAsync</span><span class="p">(</span><span class="n">owner</span><span class="p">.</span><span class="n">IuguAccountId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Atualizar status</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Approved</span><span class="p">;</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">UpdatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Notificar usuário</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_notificationService</span><span class="p">.</span><span class="n">NotifyKycApprovedAsync</span><span class="p">(</span><span class="n">ownerId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// IuguService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">VerifySubAccountAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">accountId</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Campos necessários para verificação</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">price_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Até R$ 50.000"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">physical_products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">,</span>
+<span class="w">            </span><span class="n">business_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Services"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">person_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Pessoa Física"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">automatic_transfer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">PostAsJsonAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="s">$"https://api.iugu.com/v1/accounts/{accountId}/request_verification"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">request</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">response</span><span class="p">.</span><span class="n">EnsureSuccessStatusCode</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="gestao-de-subcontas">Gestão de Subcontas<a class="headerlink" href="#gestao-de-subcontas" title="Permanent link">¶</a></h2>
+<h3 id="listar-subcontas-pendentes">Listar Subcontas Pendentes<a class="headerlink" href="#listar-subcontas-pendentes" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// AdminService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">OwnerDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetPendingKycAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Owners</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">User</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Pending</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OwnerDto</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Fullname</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Type</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">Status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">DocumentsSubmitted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">DocumentCpfUrl</span><span class="p">)</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="consultar-status-no-iugu">Consultar Status no Iugu<a class="headerlink" href="#consultar-status-no-iugu" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IuguAccountStatusDto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetSubAccountStatusAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">accountId</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="s">$"https://api.iugu.com/v1/accounts/{accountId}"</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">response</span><span class="p">.</span><span class="n">EnsureSuccessStatusCode</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadFromJsonAsync</span><span class="o">&lt;</span><span class="n">IuguAccountResponse</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IuguAccountStatusDto</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">AccountId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<span class="w">        </span><span class="n">IsVerified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">is_verified</span><span class="p">,</span>
+<span class="w">        </span><span class="n">CanReceive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">can_receive</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">balance_cents</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100m</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="vantagens-do-modelo">Vantagens do Modelo<a class="headerlink" href="#vantagens-do-modelo" title="Permanent link">¶</a></h2>
+<h3 id="para-a-plataforma-amasso">Para a Plataforma (Amasso)<a class="headerlink" href="#para-a-plataforma-amasso" title="Permanent link">¶</a></h3>
+<ul>
+<li>✅ Centralização de pagamentos</li>
+<li>✅ Controle total sobre transações</li>
+<li>✅ Compliance simplificado</li>
+<li>✅ Visibilidade de todas as operações</li>
+</ul>
+<h3 id="para-promotersinfluencers">Para Promoters/Influencers<a class="headerlink" href="#para-promotersinfluencers" title="Permanent link">¶</a></h3>
+<ul>
+<li>✅ Recebimento automático (split)</li>
+<li>✅ Transparência nos valores</li>
+<li>✅ Sem intermediários</li>
+<li>✅ Dashboard próprio no Iugu</li>
+<li>✅ Saque direto para conta bancária</li>
+</ul>
+<h3 id="para-usuarios-finais">Para Usuários Finais<a class="headerlink" href="#para-usuarios-finais" title="Permanent link">¶</a></h3>
+<ul>
+<li>✅ Pagamento simples e seguro</li>
+<li>✅ Múltiplos métodos (cartão, boleto, Pix)</li>
+<li>✅ Confirmação em tempo real</li>
+</ul>
+<h2 id="proximos-passos">Próximos Passos<a class="headerlink" href="#proximos-passos" title="Permanent link">¶</a></h2>
+<ul>
+<li>Entenda o <a href="../processo-kyc/">Processo KYC</a> em detalhes</li>
+<li>Veja como funciona o <a href="../split-pagamento/">Split de Pagamento</a></li>
+<li>Configure <a href="../webhooks/">Webhooks</a> para notificações</li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Última atualização">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:57:36 UTC">17 de outubro de 2025</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Criado em">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:57:36 UTC">17 de outubro de 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Voltar para o topo
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>

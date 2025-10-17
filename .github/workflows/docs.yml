@@ -5,31 +5,34 @@ on:
     branches:
       - main
     paths:
-      - 'documentation/**'
+      - 'docs/**'
+      - 'mkdocs.yml'
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      
-      - name: Install dependencies
+          python-version: '3.x'
+
+      - name: Instalar dependências
         run: |
           pip install mkdocs-material
           pip install mkdocs-mermaid2-plugin
           pip install mkdocs-git-revision-date-localized-plugin
-      
-      - name: Build documentation
-        run: cd documentation && mkdocs build
-      
-      - name: Deploy to GitHub Pages
+
+      - name: Build e Deploy no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./documentation/site
-
+          publish_dir: ./site
+          publish_branch: gh-pages

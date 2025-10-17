@@ -4,12 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +30,10 @@ jobs:
           pip install mkdocs-mermaid2-plugin
           pip install mkdocs-git-revision-date-localized-plugin
 
-      - name: Build e Deploy no GitHub Pages
+      - name: Build documentação
+        run: mkdocs build --clean --verbose
+
+      - name: Deploy para GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

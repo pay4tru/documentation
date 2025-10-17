@@ -1,0 +1,1706 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentação técnica completa da plataforma Amasso" name="description"/>
+<meta content="Equipe Amasso" name="author"/>
+<link href="../autenticacao/" rel="prev"/>
+<link href="../kyc-promoter-influencer/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Cadastro - Documentação Amasso</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="pink" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#fluxo-cadastro-de-usuario">
+          Pular para conteúdo
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+<a aria-label="Documentação Amasso" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentação Amasso
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Cadastro
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="pink" data-md-color-media="" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" title="Limpar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Abas" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../visao-geral/introducao/">
+          
+  
+  
+  Visão Geral
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../arquitetura/visao-geral/">
+          
+  
+  
+  Arquitetura
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../pagamentos/visao-geral-iugu/">
+          
+  
+  
+  Pagamentos Iugu
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../banco-de-dados/visao-geral/">
+          
+  
+  
+  Banco de Dados
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../perfis-de-usuario/admin/">
+          
+  
+  
+  Perfis de Usuário
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../autenticacao/">
+          
+  
+  
+  Fluxos de Negócio
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/backend-api/visao-geral/">
+          
+  
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../guias/configuracao-ambiente/requisitos/">
+          
+  
+  
+  Guias
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../casos-de-uso/usuario-compra-video/">
+          
+  
+  
+  Casos de Uso
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegação" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentação Amasso" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Documentação Amasso
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Início
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Visão Geral
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/introducao/">
+<span class="md-ellipsis">
+    Introdução
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/conceitos-principais/">
+<span class="md-ellipsis">
+    Conceitos Principais
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/glossario/">
+<span class="md-ellipsis">
+    Glossário
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/backend-api/">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitetura/comunicacao-entre-sistemas/">
+<span class="md-ellipsis">
+    Comunicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Pagamentos Iugu
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Pagamentos Iugu
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/visao-geral-iugu/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/conta-master-subcontas/">
+<span class="md-ellipsis">
+    Conta Master e Subcontas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/processo-kyc/">
+<span class="md-ellipsis">
+    Processo KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/split-pagamento/">
+<span class="md-ellipsis">
+    Split de Pagamento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/webhooks/">
+<span class="md-ellipsis">
+    Webhooks
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Banco de Dados
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/modelo-entidade-relacionamento/">
+<span class="md-ellipsis">
+    Modelo ER
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Tabelas
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Tabelas
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/users/">
+<span class="md-ellipsis">
+    Users
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/videos/">
+<span class="md-ellipsis">
+    Videos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/orders/">
+<span class="md-ellipsis">
+    Orders
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/payments/">
+<span class="md-ellipsis">
+    Payments
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/owners/">
+<span class="md-ellipsis">
+    Owners
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/income/">
+<span class="md-ellipsis">
+    Income
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/notifications/">
+<span class="md-ellipsis">
+    Notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/relacionamentos/">
+<span class="md-ellipsis">
+    Relacionamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Perfis de Usuário
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Perfis de Usuário
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/default/">
+<span class="md-ellipsis">
+    Usuário Padrão
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/influencer/">
+<span class="md-ellipsis">
+    Influencer
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+<span class="md-ellipsis">
+    Fluxos de Negócio
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Fluxos de Negócio
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Cadastro
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Cadastro
+    
+  </span>
+</a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descricao">
+<span class="md-ellipsis">
+      Descrição
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-atividades">
+<span class="md-ellipsis">
+      Diagrama de Atividades
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-envolvidos">
+<span class="md-ellipsis">
+      Componentes Envolvidos
+    </span>
+</a>
+<nav aria-label="Componentes Envolvidos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-frontend-formulario-de-cadastro">
+<span class="md-ellipsis">
+      1. Frontend - Formulário de Cadastro
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-backend-endpoint-de-cadastro">
+<span class="md-ellipsis">
+      2. Backend - Endpoint de Cadastro
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-loginservice-ativacao">
+<span class="md-ellipsis">
+      3. LoginService - Ativação
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-frontend-ativacao-de-conta">
+<span class="md-ellipsis">
+      4. Frontend - Ativação de Conta
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-validador-de-cpf">
+<span class="md-ellipsis">
+      5. Validador de CPF
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacoes">
+<span class="md-ellipsis">
+      Validações
+    </span>
+</a>
+<nav aria-label="Validações" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend">
+<span class="md-ellipsis">
+      Frontend
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backend">
+<span class="md-ellipsis">
+      Backend
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#template-de-email">
+<span class="md-ellipsis">
+      Template de Email
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regras-de-negocio">
+<span class="md-ellipsis">
+      Regras de Negócio
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kyc-promoter-influencer/">
+<span class="md-ellipsis">
+    KYC Promoter/Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../link-afiliado/">
+<span class="md-ellipsis">
+    Links de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gestao-videos/">
+<span class="md-ellipsis">
+    Gestão de Vídeos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../comissoes/">
+<span class="md-ellipsis">
+    Comissões
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+            Backend API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1_3" id="__nav_8_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Endpoints
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Endpoints
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/user/">
+<span class="md-ellipsis">
+    User
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/video/">
+<span class="md-ellipsis">
+    Video
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/order/">
+<span class="md-ellipsis">
+    Order
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/payment/">
+<span class="md-ellipsis">
+    Payment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/owner/">
+<span class="md-ellipsis">
+    Owner
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Email API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/notificacoes/">
+<span class="md-ellipsis">
+    Notificações
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/templates/">
+<span class="md-ellipsis">
+    Templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/hangfire-jobs/">
+<span class="md-ellipsis">
+    Hangfire Jobs
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Guias
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Guias
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Configuração do Ambiente
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_1">
+<span class="md-nav__icon md-icon"></span>
+            Configuração do Ambiente
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/requisitos/">
+<span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/banco-dados/">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Desenvolvimento
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_2">
+<span class="md-nav__icon md-icon"></span>
+            Desenvolvimento
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/padroes-codigo/">
+<span class="md-ellipsis">
+    Padrões de Código
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/estrutura-projeto/">
+<span class="md-ellipsis">
+    Estrutura do Projeto
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-endpoint/">
+<span class="md-ellipsis">
+    Adicionar Endpoint
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-entidade/">
+<span class="md-ellipsis">
+    Adicionar Entidade
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/criar-migration/">
+<span class="md-ellipsis">
+    Criar Migration
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Casos de Uso
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            Casos de Uso
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/usuario-compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-gera-link/">
+<span class="md-ellipsis">
+    Link de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-aprovacao-kyc/">
+<span class="md-ellipsis">
+    Aprovação KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/influencer-recebe-comissao/">
+<span class="md-ellipsis">
+    Comissão Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/admin-gerencia-plataforma/">
+<span class="md-ellipsis">
+    Gestão Admin
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descricao">
+<span class="md-ellipsis">
+      Descrição
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-atividades">
+<span class="md-ellipsis">
+      Diagrama de Atividades
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-envolvidos">
+<span class="md-ellipsis">
+      Componentes Envolvidos
+    </span>
+</a>
+<nav aria-label="Componentes Envolvidos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-frontend-formulario-de-cadastro">
+<span class="md-ellipsis">
+      1. Frontend - Formulário de Cadastro
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-backend-endpoint-de-cadastro">
+<span class="md-ellipsis">
+      2. Backend - Endpoint de Cadastro
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-loginservice-ativacao">
+<span class="md-ellipsis">
+      3. LoginService - Ativação
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-frontend-ativacao-de-conta">
+<span class="md-ellipsis">
+      4. Frontend - Ativação de Conta
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-validador-de-cpf">
+<span class="md-ellipsis">
+      5. Validador de CPF
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacoes">
+<span class="md-ellipsis">
+      Validações
+    </span>
+</a>
+<nav aria-label="Validações" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend">
+<span class="md-ellipsis">
+      Frontend
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backend">
+<span class="md-ellipsis">
+      Backend
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#template-de-email">
+<span class="md-ellipsis">
+      Template de Email
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regras-de-negocio">
+<span class="md-ellipsis">
+      Regras de Negócio
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="fluxo-cadastro-de-usuario">Fluxo: Cadastro de Usuário<a class="headerlink" href="#fluxo-cadastro-de-usuario" title="Permanent link">¶</a></h1>
+<h2 id="descricao">Descrição<a class="headerlink" href="#descricao" title="Permanent link">¶</a></h2>
+<p>O fluxo de cadastro permite que novos usuários criem uma conta na plataforma Amasso. Após o cadastro, o usuário recebe um código de ativação por email para confirmar sua conta.</p>
+<h2 id="diagrama-de-atividades">Diagrama de Atividades<a class="headerlink" href="#diagrama-de-atividades" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    A[Início] --&gt; B[Acessar /register]
+    B --&gt; C[Preencher formulário]
+    C --&gt; D{Dados válidos?}
+    D --&gt;|Não| E[Mostrar erros]
+    E --&gt; C
+    D --&gt;|Sim| F[Submeter formulário]
+    F --&gt; G{Email já existe?}
+    G --&gt;|Sim| H[Erro: Email já cadastrado]
+    H --&gt; C
+    G --&gt;|Não| I{CPF válido?}
+    I --&gt;|Não| J[Erro: CPF inválido]
+    J --&gt; C
+    I --&gt;|Sim| K{Idade &gt;= 18?}
+    K --&gt;|Não| L[Erro: Menor de idade]
+    L --&gt; C
+    K --&gt;|Sim| M[Criar usuário no banco]
+    M --&gt; N[Gerar código ativação]
+    N --&gt; O[Salvar código]
+    O --&gt; P[Enviar email]
+    P --&gt; Q[Redirecionar para /activate]
+    Q --&gt; R[Usuário insere código]
+    R --&gt; S{Código válido?}
+    S --&gt;|Não| T[Erro: Código inválido]
+    T --&gt; R
+    S --&gt;|Sim| U[Ativar conta]
+    U --&gt; V[Redirecionar para /login]
+    V --&gt; W[Fim]</code></pre>
+<h2 id="componentes-envolvidos">Componentes Envolvidos<a class="headerlink" href="#componentes-envolvidos" title="Permanent link">¶</a></h2>
+<h3 id="1-frontend-formulario-de-cadastro">1. Frontend - Formulário de Cadastro<a class="headerlink" href="#1-frontend-formulario-de-cadastro" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// frontend-react/src/pages/Auth/Register.tsx</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useForm</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-hook-form"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">zodResolver</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@hookform/resolvers/zod"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"zod"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">authApi</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@/services/api/authApi"</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">registerSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">().</span><span class="nx">email</span><span class="p">(</span><span class="s2">"Email inválido"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="s2">"Mínimo 8 caracteres"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">regex</span><span class="p">(</span><span class="sr">/[A-Z]/</span><span class="p">,</span><span class="w"> </span><span class="s2">"Precisa ter letra maiúscula"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">regex</span><span class="p">(</span><span class="sr">/[a-z]/</span><span class="p">,</span><span class="w"> </span><span class="s2">"Precisa ter letra minúscula"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">regex</span><span class="p">(</span><span class="sr">/[0-9]/</span><span class="p">,</span><span class="w"> </span><span class="s2">"Precisa ter número"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">confirmPassword</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">().</span><span class="nx">min</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"Mínimo 2 caracteres"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">().</span><span class="nx">min</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"Mínimo 2 caracteres"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">cpf</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">().</span><span class="nx">regex</span><span class="p">(</span><span class="sr">/^\d{11}$/</span><span class="p">,</span><span class="w"> </span><span class="s2">"CPF inválido"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">birthDate</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">telephone</span><span class="o">:</span><span class="w"> </span><span class="kt">z.string</span><span class="p">().</span><span class="nx">regex</span><span class="p">(</span><span class="sr">/^\d{10,11}$/</span><span class="p">,</span><span class="w"> </span><span class="s2">"Telefone inválido"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">acceptTerms</span><span class="o">:</span><span class="w"> </span><span class="kt">z.boolean</span><span class="p">().</span><span class="nx">refine</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">"Aceite os termos"</span><span class="p">)</span>
+<span class="p">}).</span><span class="nx">refine</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">password</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">confirmPassword</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">"Senhas não conferem"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"confirmPassword"</span><span class="p">]</span>
+<span class="p">}).</span><span class="nx">refine</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">birthDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">birthDate</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">birthDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">"Você precisa ter pelo menos 18 anos"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"birthDate"</span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">RegisterForm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">infer</span><span class="o">&lt;</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">registerSchema</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Register</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">register</span><span class="p">,</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="p">,</span><span class="w"> </span><span class="nx">formState</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">errors</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useForm</span><span class="o">&lt;</span><span class="nx">RegisterForm</span><span class="o">&gt;</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">resolver</span><span class="o">:</span><span class="w"> </span><span class="kt">zodResolver</span><span class="p">(</span><span class="nx">registerSchema</span><span class="p">)</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">onSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">RegisterForm</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">authApi</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">data.email</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kt">data.password</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">data.firstName</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">data.lastName</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">cpf</span><span class="o">:</span><span class="w"> </span><span class="kt">data.cpf</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">birthDate</span><span class="o">:</span><span class="w"> </span><span class="kt">data.birthDate</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">telephone</span><span class="o">:</span><span class="w"> </span><span class="kt">data.telephone</span><span class="p">,</span>
+<span class="w">        </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">UserTypeEnum</span><span class="p">.</span><span class="nx">Default</span><span class="w"> </span><span class="c1">// ou Promoter/Influencer</span>
+<span class="w">      </span><span class="p">});</span>
+
+<span class="w">      </span><span class="nx">toast</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">"Cadastro realizado! Verifique seu email."</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">navigate</span><span class="p">(</span><span class="s2">"/auth/activate"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">data.email</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">toast</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">toast</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"Erro ao cadastrar"</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">form</span><span class="w"> </span><span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">onSubmit</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"email"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Email"</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">email</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">email</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"password"</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"password"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Senha"</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">password</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">password</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"password"</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"confirmPassword"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Confirmar Senha"</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">confirmPassword</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">confirmPassword</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"firstName"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Nome"</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"lastName"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Sobrenome"</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">lastName</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"cpf"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"CPF (apenas números)"</span><span class="w"> </span><span class="nx">maxLength</span><span class="o">=</span><span class="p">{</span><span class="mf">11</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">cpf</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">cpf</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"date"</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"birthDate"</span><span class="p">)}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">birthDate</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">birthDate</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"telephone"</span><span class="p">)}</span><span class="w"> </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Telefone (DDD + número)"</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">telephone</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">telephone</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"checkbox"</span><span class="w"> </span><span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="s2">"acceptTerms"</span><span class="p">)}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="nx">Aceito</span><span class="w"> </span><span class="nx">os</span><span class="w"> </span><span class="nx">termos</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">uso</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">acceptTerms</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">.</span><span class="nx">acceptTerms</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;}</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s2">"submit"</span><span class="o">&gt;</span><span class="nx">Cadastrar</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Link</span><span class="w"> </span><span class="nx">to</span><span class="o">=</span><span class="s2">"/auth/login"</span><span class="o">&gt;</span><span class="nx">Já</span><span class="w"> </span><span class="nx">tenho</span><span class="w"> </span><span class="nx">conta</span><span class="o">&lt;</span><span class="err">/Link&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/form&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="2-backend-endpoint-de-cadastro">2. Backend - Endpoint de Cadastro<a class="headerlink" href="#2-backend-endpoint-de-cadastro" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// backend-api/Endpoints/LoginEndpoints.cs</span>
+<span class="n">app</span><span class="p">.</span><span class="n">MapPost</span><span class="p">(</span><span class="s">"/api/signup"</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">SignUpDto</span><span class="w"> </span><span class="n">dto</span><span class="p">,</span>
+<span class="w">    </span><span class="n">LoginService</span><span class="w"> </span><span class="n">service</span><span class="p">,</span>
+<span class="w">    </span><span class="n">IPasswordHasher</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">passwordHasher</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ApplicationDbContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Validar se email já existe</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">emailExists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Users</span>
+<span class="w">        </span><span class="p">.</span><span class="n">AnyAsync</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">Email</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Email</span><span class="p">.</span><span class="n">ToLower</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emailExists</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">BadRequest</span><span class="p">(</span><span class="s">"Email já cadastrado"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Validar CPF</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CpfValidator</span><span class="p">.</span><span class="n">IsValid</span><span class="p">(</span><span class="n">dto</span><span class="p">.</span><span class="n">Cpf</span><span class="p">))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">BadRequest</span><span class="p">(</span><span class="s">"CPF inválido"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Validar idade</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Today</span><span class="p">.</span><span class="n">Year</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">BirthDate</span><span class="p">.</span><span class="n">Year</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dto</span><span class="p">.</span><span class="n">BirthDate</span><span class="p">.</span><span class="n">Date</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Today</span><span class="p">.</span><span class="n">AddYears</span><span class="p">(</span><span class="o">-</span><span class="n">age</span><span class="p">))</span><span class="w"> </span><span class="n">age</span><span class="o">--</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">BadRequest</span><span class="p">(</span><span class="s">"Você precisa ter pelo menos 18 anos"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Criar usuário</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Email</span><span class="p">.</span><span class="n">ToLower</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">FirstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span>
+<span class="w">        </span><span class="n">LastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Cpf</span><span class="p">,</span>
+<span class="w">        </span><span class="n">BirthDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">BirthDate</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Telephone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Telephone</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Type</span><span class="p">,</span>
+<span class="w">        </span><span class="n">IsActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// Aguardando ativação</span>
+<span class="w">        </span><span class="n">CreatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// Hash da senha</span>
+<span class="w">    </span><span class="n">user</span><span class="p">.</span><span class="n">PasswordHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwordHasher</span><span class="p">.</span><span class="n">HashPassword</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Password</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Users</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Gerar código de ativação</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">GenerateActivationCode</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">SaveActivationCodeAsync</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Enviar email</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">SendActivationEmailAsync</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">Ok</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Cadastro realizado! Verifique seu email."</span><span class="w"> </span><span class="p">});</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="n">AllowAnonymous</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="3-loginservice-ativacao">3. LoginService - Ativação<a class="headerlink" href="#3-loginservice-ativacao" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// backend-api/Services/LoginService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GenerateActivationCode</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span><span class="w"> </span><span class="mi">999999</span><span class="p">).</span><span class="n">ToString</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SaveActivationCodeAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">mfaCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MfaCode</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UserId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">code</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ExpiresAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">.</span><span class="n">AddHours</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
+<span class="w">        </span><span class="n">CreatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">MfaCodes</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">mfaCode</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendActivationEmailAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">notification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Notification</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NotificationTypeEnum</span><span class="p">.</span><span class="n">UserActivation</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NotificationChannelEnum</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">,</span>
+<span class="w">        </span><span class="n">MetadataJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">        </span><span class="n">CreatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Notifications</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ActivateAccountAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Users</span>
+<span class="w">        </span><span class="p">.</span><span class="n">FirstOrDefaultAsync</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">Email</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="n">ToLower</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Usuário não encontrado"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">IsActive</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Conta já ativada"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">mfaCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">MfaCodes</span>
+<span class="w">        </span><span class="p">.</span><span class="n">FirstOrDefaultAsync</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">UserId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">Code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mfaCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Código inválido"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mfaCode</span><span class="p">.</span><span class="n">ExpiresAt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Código expirado"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Ativar conta</span>
+<span class="w">    </span><span class="n">user</span><span class="p">.</span><span class="n">IsActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">user</span><span class="p">.</span><span class="n">UpdatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Remover código</span>
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">MfaCodes</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">mfaCode</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-frontend-ativacao-de-conta">4. Frontend - Ativação de Conta<a class="headerlink" href="#4-frontend-ativacao-de-conta" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// frontend-react/src/pages/Auth/Activate.tsx</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Activate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useLocation</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">setCode</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">location</span><span class="p">.</span><span class="nx">state</span><span class="o">?</span><span class="p">.</span><span class="nx">email</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleActivate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">authApi</span><span class="p">.</span><span class="nx">activate</span><span class="p">({</span><span class="w"> </span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="p">});</span>
+<span class="w">      </span><span class="nx">toast</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">"Conta ativada com sucesso!"</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">navigate</span><span class="p">(</span><span class="s2">"/auth/login"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">toast</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">"Código inválido"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleResendCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">authApi</span><span class="p">.</span><span class="nx">resendActivationCode</span><span class="p">({</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="p">});</span>
+<span class="w">      </span><span class="nx">toast</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">"Código reenviado!"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">toast</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"Erro ao reenviar código"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Ativar</span><span class="w"> </span><span class="nx">Conta</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Digite</span><span class="w"> </span><span class="nx">o</span><span class="w"> </span><span class="nx">código</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="nx">dígitos</span><span class="w"> </span><span class="nx">enviado</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="p">{</span><span class="nx">email</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span>
+<span class="w">        </span><span class="kr">type</span><span class="o">=</span><span class="s2">"text"</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">maxLength</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">code</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCode</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
+<span class="w">        </span><span class="nx">placeholder</span><span class="o">=</span><span class="s2">"000000"</span>
+<span class="w">      </span><span class="o">/&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleActivate</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Ativar</span><span class="w"> </span><span class="nx">Conta</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleResendCode</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Reenviar</span><span class="w"> </span><span class="nx">Código</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="5-validador-de-cpf">5. Validador de CPF<a class="headerlink" href="#5-validador-de-cpf" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// backend-api/Helpers/CpfValidator.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CpfValidator</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsValid</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">cpf</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">cpf</span><span class="p">))</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cpf</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s">"."</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">).</span><span class="n">Replace</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">).</span><span class="n">Trim</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cpf</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Verificar se todos os dígitos são iguais</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cpf</span><span class="p">.</span><span class="n">Distinct</span><span class="p">().</span><span class="n">Count</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Validar primeiro dígito</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">cpf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ToString</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">remainder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">digit1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remainder</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">remainder</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">cpf</span><span class="p">[</span><span class="mi">9</span><span class="p">].</span><span class="n">ToString</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">digit1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Validar segundo dígito</span>
+<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">cpf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ToString</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">11</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">remainder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">digit2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remainder</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">remainder</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">cpf</span><span class="p">[</span><span class="mi">10</span><span class="p">].</span><span class="n">ToString</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">digit2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="validacoes">Validações<a class="headerlink" href="#validacoes" title="Permanent link">¶</a></h2>
+<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">¶</a></h3>
+<ul>
+<li>Email formato válido</li>
+<li>Senha com requisitos mínimos</li>
+<li>Senhas coincidem</li>
+<li>CPF com 11 dígitos</li>
+<li>Telefone com 10-11 dígitos</li>
+<li>Data de nascimento (idade &gt;= 18)</li>
+<li>Aceite de termos</li>
+</ul>
+<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">¶</a></h3>
+<ul>
+<li>Email único</li>
+<li>CPF válido (algoritmo)</li>
+<li>Idade mínima 18 anos</li>
+<li>Senha forte</li>
+</ul>
+<h2 id="template-de-email">Template de Email<a class="headerlink" href="#template-de-email" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- email-api/wwwroot/Templates/UserActivation.html --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ative sua conta - Amasso<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">"max-width: 600px; margin: 0 auto; padding: 20px;"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Bem-vindo à Amasso!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Olá, seja bem-vindo à nossa plataforma!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Para ativar sua conta, use o código abaixo:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">"background: #f0f0f0; padding: 20px; text-align: center; font-size: 32px; letter-spacing: 8px;"</span><span class="p">&gt;</span>
+            {{Code}}
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este código expira em 24 horas.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Se você não criou uma conta, ignore este email.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"color: #999; font-size: 12px;"</span><span class="p">&gt;</span>Amasso - Plataforma de Vídeos Exclusivos<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="regras-de-negocio">Regras de Negócio<a class="headerlink" href="#regras-de-negocio" title="Permanent link">¶</a></h2>
+<ol>
+<li><strong>Email único</strong>: Não pode haver dois usuários com mesmo email</li>
+<li><strong>CPF válido</strong>: Deve passar pela validação de dígitos verificadores</li>
+<li><strong>Idade mínima</strong>: 18 anos completos</li>
+<li><strong>Código de ativação</strong>: Válido por 24 horas</li>
+<li><strong>Conta inativa</strong>: Até ativar, não pode fazer login</li>
+<li><strong>Reenvio de código</strong>: Pode solicitar novo código</li>
+<li><strong>Senha forte</strong>: Mínimo 8 caracteres com letras e números</li>
+</ol>
+<h2 id="proximos-passos">Próximos Passos<a class="headerlink" href="#proximos-passos" title="Permanent link">¶</a></h2>
+<ul>
+<li>Veja <a href="../autenticacao/">Fluxo de Autenticação</a> para login</li>
+<li>Consulte <a href="../../perfis-de-usuario/default/">Perfis de Usuário</a></li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Última atualização">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:41:24 UTC">17 de outubro de 2025</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Criado em">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:41:24 UTC">17 de outubro de 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Voltar para o topo
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>

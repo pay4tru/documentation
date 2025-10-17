@@ -1,0 +1,2027 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentação técnica completa da plataforma Amasso" name="description"/>
+<meta content="Equipe Amasso" name="author"/>
+<link href="../visao-geral/" rel="prev"/>
+<link href="../email-api/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.22" name="generator"/>
+<title>Backend API - Documentação Amasso</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="pink" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#backend-api">
+          Pular para conteúdo
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+<a aria-label="Documentação Amasso" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentação Amasso
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Backend API
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="pink" data-md-color-media="" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Pesquisar" class="md-search__options">
+<button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" title="Limpar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Abas" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../visao-geral/introducao/">
+          
+  
+  
+  Visão Geral
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../visao-geral/">
+          
+  
+  
+  Arquitetura
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../pagamentos/visao-geral-iugu/">
+          
+  
+  
+  Pagamentos Iugu
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../banco-de-dados/visao-geral/">
+          
+  
+  
+  Banco de Dados
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../perfis-de-usuario/admin/">
+          
+  
+  
+  Perfis de Usuário
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../fluxos-de-negocio/autenticacao/">
+          
+  
+  
+  Fluxos de Negócio
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../apis/backend-api/visao-geral/">
+          
+  
+  
+  APIs
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../guias/configuracao-ambiente/requisitos/">
+          
+  
+  
+  Guias
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../casos-de-uso/usuario-compra-video/">
+          
+  
+  
+  Casos de Uso
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegação" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentação Amasso" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Documentação Amasso">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Documentação Amasso
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/pay4tru/documentation" title="Ir para repositório">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    documentation
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Início
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Visão Geral
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/introducao/">
+<span class="md-ellipsis">
+    Introdução
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/conceitos-principais/">
+<span class="md-ellipsis">
+    Conceitos Principais
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../visao-geral/glossario/">
+<span class="md-ellipsis">
+    Glossário
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+</a>
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-geral">
+<span class="md-ellipsis">
+      Visão Geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tecnologias">
+<span class="md-ellipsis">
+      Tecnologias
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estrutura-de-pastas">
+<span class="md-ellipsis">
+      Estrutura de Pastas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitetura-em-camadas">
+<span class="md-ellipsis">
+      Arquitetura em Camadas
+    </span>
+</a>
+<nav aria-label="Arquitetura em Camadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-endpoint-layer-presentation">
+<span class="md-ellipsis">
+      1. Endpoint Layer (Presentation)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-service-layer-business-logic">
+<span class="md-ellipsis">
+      2. Service Layer (Business Logic)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-data-layer-data-access">
+<span class="md-ellipsis">
+      3. Data Layer (Data Access)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principais-funcionalidades">
+<span class="md-ellipsis">
+      Principais Funcionalidades
+    </span>
+</a>
+<nav aria-label="Principais Funcionalidades" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacao-e-autorizacao">
+<span class="md-ellipsis">
+      Autenticação e Autorização
+    </span>
+</a>
+<nav aria-label="Autenticação e Autorização" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jwt-tokens">
+<span class="md-ellipsis">
+      JWT Tokens
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mfa-multi-factor-authentication">
+<span class="md-ellipsis">
+      MFA (Multi-Factor Authentication)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestao-de-videos">
+<span class="md-ellipsis">
+      Gestão de Vídeos
+    </span>
+</a>
+<nav aria-label="Gestão de Vídeos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#upload-e-armazenamento">
+<span class="md-ellipsis">
+      Upload e Armazenamento
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#videos-para-promoters">
+<span class="md-ellipsis">
+      Vídeos para Promoters
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sistema-de-pedidos-e-pagamentos">
+<span class="md-ellipsis">
+      Sistema de Pedidos e Pagamentos
+    </span>
+</a>
+<nav aria-label="Sistema de Pedidos e Pagamentos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criar-pedido-com-split">
+<span class="md-ellipsis">
+      Criar Pedido com Split
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webhooks-do-iugu">
+<span class="md-ellipsis">
+      Webhooks do Iugu
+    </span>
+</a>
+<nav aria-label="Webhooks do Iugu" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#processar-confirmacao-de-pagamento">
+<span class="md-ellipsis">
+      Processar Confirmação de Pagamento
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestao-de-kyc">
+<span class="md-ellipsis">
+      Gestão de KYC
+    </span>
+</a>
+<nav aria-label="Gestão de KYC" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aprovar-kyc-admin">
+<span class="md-ellipsis">
+      Aprovar KYC (Admin)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracoes">
+<span class="md-ellipsis">
+      Configurações
+    </span>
+</a>
+<nav aria-label="Configurações" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#appsettingsjson">
+<span class="md-ellipsis">
+      appsettings.json
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#middlewares">
+<span class="md-ellipsis">
+      Middlewares
+    </span>
+</a>
+<nav aria-label="Middlewares" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#request-logging">
+<span class="md-ellipsis">
+      Request Logging
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exception-handling">
+<span class="md-ellipsis">
+      Exception Handling
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jwt-authentication">
+<span class="md-ellipsis">
+      JWT Authentication
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../comunicacao-entre-sistemas/">
+<span class="md-ellipsis">
+    Comunicação
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Pagamentos Iugu
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Pagamentos Iugu
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/visao-geral-iugu/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/conta-master-subcontas/">
+<span class="md-ellipsis">
+    Conta Master e Subcontas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/processo-kyc/">
+<span class="md-ellipsis">
+    Processo KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/split-pagamento/">
+<span class="md-ellipsis">
+    Split de Pagamento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pagamentos/webhooks/">
+<span class="md-ellipsis">
+    Webhooks
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Banco de Dados
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/modelo-entidade-relacionamento/">
+<span class="md-ellipsis">
+    Modelo ER
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Tabelas
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Tabelas
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/users/">
+<span class="md-ellipsis">
+    Users
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/videos/">
+<span class="md-ellipsis">
+    Videos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/orders/">
+<span class="md-ellipsis">
+    Orders
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/payments/">
+<span class="md-ellipsis">
+    Payments
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/owners/">
+<span class="md-ellipsis">
+    Owners
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/income/">
+<span class="md-ellipsis">
+    Income
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/notifications/">
+<span class="md-ellipsis">
+    Notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../banco-de-dados/tabelas/relacionamentos/">
+<span class="md-ellipsis">
+    Relacionamentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Perfis de Usuário
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Perfis de Usuário
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/default/">
+<span class="md-ellipsis">
+    Usuário Padrão
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../perfis-de-usuario/influencer/">
+<span class="md-ellipsis">
+    Influencer
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Fluxos de Negócio
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Fluxos de Negócio
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/cadastro-usuario/">
+<span class="md-ellipsis">
+    Cadastro
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/kyc-promoter-influencer/">
+<span class="md-ellipsis">
+    KYC Promoter/Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/link-afiliado/">
+<span class="md-ellipsis">
+    Links de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/gestao-videos/">
+<span class="md-ellipsis">
+    Gestão de Vídeos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fluxos-de-negocio/comissoes/">
+<span class="md-ellipsis">
+    Comissões
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Backend API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+            Backend API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/autenticacao/">
+<span class="md-ellipsis">
+    Autenticação
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_1_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_1_3" id="__nav_8_1_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Endpoints
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_1_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_1_3">
+<span class="md-nav__icon md-icon"></span>
+            Endpoints
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/user/">
+<span class="md-ellipsis">
+    User
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/video/">
+<span class="md-ellipsis">
+    Video
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/order/">
+<span class="md-ellipsis">
+    Order
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/payment/">
+<span class="md-ellipsis">
+    Payment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/admin/">
+<span class="md-ellipsis">
+    Admin
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/owner/">
+<span class="md-ellipsis">
+    Owner
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/backend-api/endpoints/promoter/">
+<span class="md-ellipsis">
+    Promoter
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Email API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/visao-geral/">
+<span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/notificacoes/">
+<span class="md-ellipsis">
+    Notificações
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/templates/">
+<span class="md-ellipsis">
+    Templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis/email-api/hangfire-jobs/">
+<span class="md-ellipsis">
+    Hangfire Jobs
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Guias
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Guias
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Configuração do Ambiente
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_1">
+<span class="md-nav__icon md-icon"></span>
+            Configuração do Ambiente
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/requisitos/">
+<span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/email-api/">
+<span class="md-ellipsis">
+    Email API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/configuracao-ambiente/banco-dados/">
+<span class="md-ellipsis">
+    Banco de Dados
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Desenvolvimento
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_2">
+<span class="md-nav__icon md-icon"></span>
+            Desenvolvimento
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/padroes-codigo/">
+<span class="md-ellipsis">
+    Padrões de Código
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/estrutura-projeto/">
+<span class="md-ellipsis">
+    Estrutura do Projeto
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-endpoint/">
+<span class="md-ellipsis">
+    Adicionar Endpoint
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/adicionar-entidade/">
+<span class="md-ellipsis">
+    Adicionar Entidade
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../guias/desenvolvimento/criar-migration/">
+<span class="md-ellipsis">
+    Criar Migration
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Casos de Uso
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            Casos de Uso
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/usuario-compra-video/">
+<span class="md-ellipsis">
+    Compra de Vídeo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-gera-link/">
+<span class="md-ellipsis">
+    Link de Afiliado
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/promoter-aprovacao-kyc/">
+<span class="md-ellipsis">
+    Aprovação KYC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/influencer-recebe-comissao/">
+<span class="md-ellipsis">
+    Comissão Influencer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../casos-de-uso/admin-gerencia-plataforma/">
+<span class="md-ellipsis">
+    Gestão Admin
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Índice" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visao-geral">
+<span class="md-ellipsis">
+      Visão Geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tecnologias">
+<span class="md-ellipsis">
+      Tecnologias
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estrutura-de-pastas">
+<span class="md-ellipsis">
+      Estrutura de Pastas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitetura-em-camadas">
+<span class="md-ellipsis">
+      Arquitetura em Camadas
+    </span>
+</a>
+<nav aria-label="Arquitetura em Camadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-endpoint-layer-presentation">
+<span class="md-ellipsis">
+      1. Endpoint Layer (Presentation)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-service-layer-business-logic">
+<span class="md-ellipsis">
+      2. Service Layer (Business Logic)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-data-layer-data-access">
+<span class="md-ellipsis">
+      3. Data Layer (Data Access)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#principais-funcionalidades">
+<span class="md-ellipsis">
+      Principais Funcionalidades
+    </span>
+</a>
+<nav aria-label="Principais Funcionalidades" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacao-e-autorizacao">
+<span class="md-ellipsis">
+      Autenticação e Autorização
+    </span>
+</a>
+<nav aria-label="Autenticação e Autorização" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jwt-tokens">
+<span class="md-ellipsis">
+      JWT Tokens
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mfa-multi-factor-authentication">
+<span class="md-ellipsis">
+      MFA (Multi-Factor Authentication)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestao-de-videos">
+<span class="md-ellipsis">
+      Gestão de Vídeos
+    </span>
+</a>
+<nav aria-label="Gestão de Vídeos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#upload-e-armazenamento">
+<span class="md-ellipsis">
+      Upload e Armazenamento
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#videos-para-promoters">
+<span class="md-ellipsis">
+      Vídeos para Promoters
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sistema-de-pedidos-e-pagamentos">
+<span class="md-ellipsis">
+      Sistema de Pedidos e Pagamentos
+    </span>
+</a>
+<nav aria-label="Sistema de Pedidos e Pagamentos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criar-pedido-com-split">
+<span class="md-ellipsis">
+      Criar Pedido com Split
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webhooks-do-iugu">
+<span class="md-ellipsis">
+      Webhooks do Iugu
+    </span>
+</a>
+<nav aria-label="Webhooks do Iugu" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#processar-confirmacao-de-pagamento">
+<span class="md-ellipsis">
+      Processar Confirmação de Pagamento
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestao-de-kyc">
+<span class="md-ellipsis">
+      Gestão de KYC
+    </span>
+</a>
+<nav aria-label="Gestão de KYC" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aprovar-kyc-admin">
+<span class="md-ellipsis">
+      Aprovar KYC (Admin)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracoes">
+<span class="md-ellipsis">
+      Configurações
+    </span>
+</a>
+<nav aria-label="Configurações" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#appsettingsjson">
+<span class="md-ellipsis">
+      appsettings.json
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#middlewares">
+<span class="md-ellipsis">
+      Middlewares
+    </span>
+</a>
+<nav aria-label="Middlewares" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#request-logging">
+<span class="md-ellipsis">
+      Request Logging
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exception-handling">
+<span class="md-ellipsis">
+      Exception Handling
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jwt-authentication">
+<span class="md-ellipsis">
+      JWT Authentication
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proximos-passos">
+<span class="md-ellipsis">
+      Próximos Passos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="backend-api">Backend API<a class="headerlink" href="#backend-api" title="Permanent link">¶</a></h1>
+<h2 id="visao-geral">Visão Geral<a class="headerlink" href="#visao-geral" title="Permanent link">¶</a></h2>
+<p>O Backend API é o coração da plataforma Amasso, construído com <strong>ASP.NET Core 8.0</strong> e seguindo os princípios de Clean Architecture.</p>
+<p><strong>Localização</strong>: <code>backend-api/</code></p>
+<h2 id="tecnologias">Tecnologias<a class="headerlink" href="#tecnologias" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tecnologia</th>
+<th>Versão</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.NET</td>
+<td>8.0</td>
+<td>Framework principal</td>
+</tr>
+<tr>
+<td>ASP.NET Core</td>
+<td>8.0</td>
+<td>Web API</td>
+</tr>
+<tr>
+<td>Entity Framework Core</td>
+<td>8.0</td>
+<td>ORM</td>
+</tr>
+<tr>
+<td>Npgsql</td>
+<td>8.0</td>
+<td>Driver PostgreSQL</td>
+</tr>
+<tr>
+<td>JWT Bearer</td>
+<td>-</td>
+<td>Autenticação</td>
+</tr>
+<tr>
+<td>Swagger/OpenAPI</td>
+<td>-</td>
+<td>Documentação API</td>
+</tr>
+</tbody>
+</table>
+<h2 id="estrutura-de-pastas">Estrutura de Pastas<a class="headerlink" href="#estrutura-de-pastas" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>backend-api/
+├── Data/
+│   ├── Context/
+│   │   └── Pay4TruContext.cs          # DbContext principal
+│   ├── Entities/                      # 17 entidades
+│   │   ├── User.cs
+│   │   ├── Owner.cs
+│   │   ├── Video.cs
+│   │   ├── Order.cs
+│   │   ├── Payment.cs
+│   │   ├── Income.cs
+│   │   ├── Notification.cs
+│   │   └── ... (outras)
+│   ├── Enums/                         # 13 enums
+│   │   ├── UserTypeEnum.cs
+│   │   ├── PaymentStatusEnum.cs
+│   │   ├── OwnerSubAccountStatusEnum.cs
+│   │   └── ...
+│   ├── Dtos/                          # 53 DTOs
+│   │   ├── Login.cs
+│   │   ├── VideoDto.cs
+│   │   ├── OrderDto.cs
+│   │   └── ...
+│   ├── Configuration/                 # EF Core configurations
+│   │   ├── UserConfiguration.cs
+│   │   ├── VideoConfiguration.cs
+│   │   └── ...
+│   └── Validations/                   # FluentValidation
+│       ├── LoginValidator.cs
+│       └── ...
+├── Endpoints/                         # Minimal APIs
+│   ├── LoginEndpoints.cs
+│   ├── UserEndpoints.cs
+│   ├── VideoEndpoints.cs
+│   ├── OrderEndpoints.cs
+│   ├── PaymentEndpoints.cs
+│   ├── AdminEndpoints.cs
+│   ├── OwnerEndpoints.cs
+│   ├── PromoterEndpoint.cs
+│   ├── MfaEndpoints.cs
+│   └── WebHookEndpoint.cs
+├── Services/                          # Lógica de negócio
+│   ├── LoginService.cs
+│   ├── UserService.cs
+│   ├── VideoService.cs
+│   ├── OrderService.cs
+│   ├── PaymentService.cs
+│   ├── OwnerService.cs
+│   ├── TokenService.cs
+│   ├── MfaService.cs
+│   ├── Admin/
+│   │   └── AdminService.cs
+│   ├── Promoter/
+│   │   └── PromoterService.cs
+│   ├── External/
+│   │   ├── IuguService.cs
+│   │   ├── CloudinaryService.cs
+│   │   └── ...
+│   └── ...
+├── Helpers/
+│   ├── Extensions/                    # Extension methods
+│   ├── Middlewares/                   # Middlewares customizados
+│   ├── Constants/                     # Constantes
+│   └── Wrappers/                      # Response wrappers
+├── Migrations/                        # EF Core migrations (49 arquivos)
+├── Program.cs                         # Entrada da aplicação
+├── Usings.cs                          # Global usings
+├── appsettings.json                   # Configurações
+├── Pay4Tru.Api.csproj                # Definição do projeto
+└── Dockerfile                         # Container Docker
+</code></pre></div>
+<h2 id="arquitetura-em-camadas">Arquitetura em Camadas<a class="headerlink" href="#arquitetura-em-camadas" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>graph TD
+    A[HTTP Request] --&gt; B[Endpoint Layer]
+    B --&gt; C[Service Layer]
+    C --&gt; D[Data Layer]
+    D --&gt; E[PostgreSQL]
+
+    C --&gt; F[External Services]
+    F --&gt; G[Iugu API]
+    F --&gt; H[Cloudinary]
+
+    style B fill:#e1f5ff
+    style C fill:#fff4e6
+    style D fill:#f3e5f5
+    style F fill:#e8f5e9</code></pre>
+<h3 id="1-endpoint-layer-presentation">1. Endpoint Layer (Presentation)<a class="headerlink" href="#1-endpoint-layer-presentation" title="Permanent link">¶</a></h3>
+<p><strong>Localização</strong>: <code>Endpoints/</code></p>
+<p>Usa Minimal APIs do ASP.NET Core:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Exemplo simplificado</span>
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VideoEndpoints</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MapVideoEndpoints</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">IEndpointRouteBuilder</span><span class="w"> </span><span class="n">app</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">MapGroup</span><span class="p">(</span><span class="s">"/api/videos"</span><span class="p">).</span><span class="n">RequireAuthorization</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">group</span><span class="p">.</span><span class="n">MapGet</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span><span class="w"> </span><span class="n">GetAllVideos</span><span class="p">);</span>
+<span class="w">        </span><span class="k">group</span><span class="p">.</span><span class="n">MapGet</span><span class="p">(</span><span class="s">"/{id}"</span><span class="p">,</span><span class="w"> </span><span class="n">GetVideoById</span><span class="p">);</span>
+<span class="w">        </span><span class="k">group</span><span class="p">.</span><span class="n">MapPost</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span><span class="w"> </span><span class="n">CreateVideo</span><span class="p">).</span><span class="n">RequireRole</span><span class="p">(</span><span class="s">"Admin"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">group</span><span class="p">.</span><span class="n">MapPut</span><span class="p">(</span><span class="s">"/{id}"</span><span class="p">,</span><span class="w"> </span><span class="n">UpdateVideo</span><span class="p">).</span><span class="n">RequireRole</span><span class="p">(</span><span class="s">"Admin"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">group</span><span class="p">.</span><span class="n">MapDelete</span><span class="p">(</span><span class="s">"/{id}"</span><span class="p">,</span><span class="w"> </span><span class="n">DeleteVideo</span><span class="p">).</span><span class="n">RequireRole</span><span class="p">(</span><span class="s">"Admin"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Responsabilidades</strong>:
+- Validação de entrada (DTOs)
+- Autorização (Roles, Claims)
+- Chamada aos Services
+- Formatação de resposta</p>
+<h3 id="2-service-layer-business-logic">2. Service Layer (Business Logic)<a class="headerlink" href="#2-service-layer-business-logic" title="Permanent link">¶</a></h3>
+<p><strong>Localização</strong>: <code>Services/</code></p>
+<p>Contém toda a lógica de negócio:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IVideoService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">VideoDto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetByIdAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">long?</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">VideoDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetAllAsync</span><span class="p">(</span><span class="kt">long?</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">VideoDto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreateAsync</span><span class="p">(</span><span class="n">VideoDto</span><span class="w"> </span><span class="n">dto</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Task</span><span class="w"> </span><span class="nf">UpdateAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">VideoDto</span><span class="w"> </span><span class="n">dto</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Task</span><span class="w"> </span><span class="nf">DeleteAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">VideoDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetVideosForPromoterAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">promoterId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Responsabilidades</strong>:
+- Regras de negócio
+- Validações complexas
+- Orquestração de operações
+- Chamadas a serviços externos
+- Transações</p>
+<h3 id="3-data-layer-data-access">3. Data Layer (Data Access)<a class="headerlink" href="#3-data-layer-data-access" title="Permanent link">¶</a></h3>
+<p><strong>Localização</strong>: <code>Data/</code></p>
+<p>Entity Framework Core com Repository Pattern:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Pay4TruDb</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DbContext</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Users</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Video</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Videos</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// ... outros DbSets</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">b</span><span class="p">.</span><span class="n">ApplyConfiguration</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UserConfiguration</span><span class="p">());</span>
+<span class="w">        </span><span class="n">b</span><span class="p">.</span><span class="n">ApplyConfiguration</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">VideoConfiguration</span><span class="p">());</span>
+<span class="w">        </span><span class="c1">// ... outras configurações</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Responsabilidades</strong>:
+- Mapeamento objeto-relacional
+- Queries ao banco
+- Migrations
+- Configurações de entidades</p>
+<h2 id="principais-funcionalidades">Principais Funcionalidades<a class="headerlink" href="#principais-funcionalidades" title="Permanent link">¶</a></h2>
+<h3 id="autenticacao-e-autorizacao">Autenticação e Autorização<a class="headerlink" href="#autenticacao-e-autorizacao" title="Permanent link">¶</a></h3>
+<h4 id="jwt-tokens">JWT Tokens<a class="headerlink" href="#jwt-tokens" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// TokenService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GenerateToken</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">Claim</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">NameIdentifier</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">ToString</span><span class="p">()),</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">Claim</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Email</span><span class="p">),</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">Claim</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Type</span><span class="p">.</span><span class="n">ToString</span><span class="p">()),</span>
+<span class="w">        </span><span class="c1">// Claims adicionais</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SymmetricSecurityKey</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">_jwtSettings</span><span class="p">.</span><span class="n">Secret</span><span class="p">));</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">creds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SigningCredentials</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">SecurityAlgorithms</span><span class="p">.</span><span class="n">HmacSha256</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JwtSecurityToken</span><span class="p">(</span>
+<span class="w">        </span><span class="n">issuer</span><span class="p">:</span><span class="w"> </span><span class="n">_jwtSettings</span><span class="p">.</span><span class="n">Issuer</span><span class="p">,</span>
+<span class="w">        </span><span class="n">audience</span><span class="p">:</span><span class="w"> </span><span class="n">_jwtSettings</span><span class="p">.</span><span class="n">Audience</span><span class="p">,</span>
+<span class="w">        </span><span class="n">claims</span><span class="p">:</span><span class="w"> </span><span class="n">claims</span><span class="p">,</span>
+<span class="w">        </span><span class="n">expires</span><span class="p">:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">.</span><span class="n">AddHours</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
+<span class="w">        </span><span class="n">signingCredentials</span><span class="p">:</span><span class="w"> </span><span class="n">creds</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">JwtSecurityTokenHandler</span><span class="p">().</span><span class="n">WriteToken</span><span class="p">(</span><span class="n">token</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="mfa-multi-factor-authentication">MFA (Multi-Factor Authentication)<a class="headerlink" href="#mfa-multi-factor-authentication" title="Permanent link">¶</a></h4>
+<ol>
+<li>Usuário faz login</li>
+<li>Sistema gera código de 6 dígitos</li>
+<li>Código salvo na tabela <code>mfa_codes</code> com expiração de 5 minutos</li>
+<li>Notificação criada para envio (Email API processa)</li>
+<li>Usuário informa código</li>
+<li>Sistema valida e emite JWT</li>
+</ol>
+<h3 id="gestao-de-videos">Gestão de Vídeos<a class="headerlink" href="#gestao-de-videos" title="Permanent link">¶</a></h3>
+<h4 id="upload-e-armazenamento">Upload e Armazenamento<a class="headerlink" href="#upload-e-armazenamento" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// VideoService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">VideoDto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">UploadVideoAsync</span><span class="p">(</span><span class="n">IFormFile</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">VideoDto</span><span class="w"> </span><span class="n">dto</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Upload para Cloudinary</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">uploadResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_cloudinaryService</span><span class="p">.</span><span class="n">UploadVideoAsync</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 2. Criar entidade Video</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">video</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Video</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Title</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Description</span><span class="p">,</span>
+<span class="w">        </span><span class="n">CloudinaryPublicId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uploadResult</span><span class="p">.</span><span class="n">PublicId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">Price</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ReleaseDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">ReleaseDate</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Videos</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">video</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 3. Criar VideoRevenueConfig</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VideoRevenueConfig</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">VideoId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">video</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PlatformPercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">PlatformPercentage</span><span class="p">,</span>
+<span class="w">        </span><span class="n">OwnerPercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">OwnerPercentage</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PromoterPercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">PromoterPercentage</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">VideoRevenueConfigs</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">MapToDto</span><span class="p">(</span><span class="n">video</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="videos-para-promoters">Vídeos para Promoters<a class="headerlink" href="#videos-para-promoters" title="Permanent link">¶</a></h4>
+<p><strong>Regra de negócio importante</strong>: Promoters só veem vídeos com <code>PromoterPercentage &gt; 0%</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">VideoDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetVideosForPromoterAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">promoterId</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Videos</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">VideoRevenueConfig</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">IsActive</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
+<span class="w">                    </span><span class="n">v</span><span class="p">.</span><span class="n">VideoRevenueConfig</span><span class="p">.</span><span class="n">PromoterPercentage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">MapToDto</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="sistema-de-pedidos-e-pagamentos">Sistema de Pedidos e Pagamentos<a class="headerlink" href="#sistema-de-pedidos-e-pagamentos" title="Permanent link">¶</a></h3>
+<h4 id="criar-pedido-com-split">Criar Pedido com Split<a class="headerlink" href="#criar-pedido-com-split" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// OrderService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">OrderDto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreateOrderAsync</span><span class="p">(</span><span class="n">CreateOrderDto</span><span class="w"> </span><span class="n">dto</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">video</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Videos</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">VideoRevenueConfig</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">FirstAsync</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">VideoId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">video</span><span class="p">.</span><span class="n">VideoRevenueConfig</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Calcular valores</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">totalAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">video</span><span class="p">.</span><span class="n">Price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// em centavos</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">platformAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalAmount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">PlatformPercentage</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">ownerAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalAmount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">OwnerPercentage</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">promoterAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">PromoterId</span><span class="p">.</span><span class="n">HasValue</span><span class="w"> </span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="n">totalAmount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">PromoterPercentage</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Criar Order</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Order</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">UserId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">UserId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">VideoId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">VideoId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PromoterId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dto</span><span class="p">.</span><span class="n">PromoterId</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalAmount</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PlatformAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platformAmount</span><span class="p">,</span>
+<span class="w">        </span><span class="n">OwnerAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ownerAmount</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PromoterAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">promoterAmount</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Orders</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Criar Invoice no Iugu com split</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">invoice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_iuguService</span><span class="p">.</span><span class="n">CreateInvoiceWithSplitAsync</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Criar Payment</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Payment</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">OrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">IuguInvoiceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">invoice</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaymentStatusEnum</span><span class="p">.</span><span class="n">Pending</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Payments</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">payment</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Criar Notification</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">notification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Notification</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NotificationTypeEnum</span><span class="p">.</span><span class="n">OrderCreated</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">NotificationPreference</span><span class="p">,</span>
+<span class="w">        </span><span class="n">MetadataJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">OrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Notifications</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">MapToDto</span><span class="p">(</span><span class="n">order</span><span class="p">,</span><span class="w"> </span><span class="n">invoice</span><span class="p">.</span><span class="n">SecureUrl</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="webhooks-do-iugu">Webhooks do Iugu<a class="headerlink" href="#webhooks-do-iugu" title="Permanent link">¶</a></h3>
+<h4 id="processar-confirmacao-de-pagamento">Processar Confirmação de Pagamento<a class="headerlink" href="#processar-confirmacao-de-pagamento" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// PaymentEndpoints.cs - Webhook</span>
+<span class="na">[AllowAnonymous]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HandleIuguWebhook</span><span class="p">(</span>
+<span class="w">    </span><span class="na">[FromBody]</span><span class="w"> </span><span class="n">IuguWebhookDto</span><span class="w"> </span><span class="n">webhook</span><span class="p">,</span>
+<span class="w">    </span><span class="na">[FromServices]</span><span class="w"> </span><span class="n">IPaymentService</span><span class="w"> </span><span class="n">paymentService</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Validar assinatura do webhook (segurança)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ValidateIuguSignature</span><span class="p">(</span><span class="n">webhook</span><span class="p">))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">Unauthorized</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">webhook</span><span class="p">.</span><span class="n">Event</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"invoice.status_changed"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
+<span class="w">        </span><span class="n">webhook</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">Status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"paid"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">paymentService</span><span class="p">.</span><span class="n">ConfirmPaymentAsync</span><span class="p">(</span><span class="n">webhook</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Results</span><span class="p">.</span><span class="n">Ok</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// PaymentService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ConfirmPaymentAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">iuguInvoiceId</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Payments</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Order</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ThenInclude</span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">Video</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ThenInclude</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">OwnerVideos</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">FirstAsync</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">IuguInvoiceId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">iuguInvoiceId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Atualizar status</span>
+<span class="w">    </span><span class="n">payment</span><span class="p">.</span><span class="n">Status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaymentStatusEnum</span><span class="p">.</span><span class="n">Paid</span><span class="p">;</span>
+<span class="w">    </span><span class="n">payment</span><span class="p">.</span><span class="n">IuguPaidAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Criar Income para cada parte</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">incomes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Income</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Plataforma</span>
+<span class="w">    </span><span class="n">incomes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Income</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">OrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">PlatformAmount</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IncomeTypeEnum</span><span class="p">.</span><span class="n">Platform</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Owner/Influencer</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Video</span><span class="p">.</span><span class="n">OwnerVideos</span><span class="p">.</span><span class="n">First</span><span class="p">().</span><span class="n">Owner</span><span class="p">;</span>
+<span class="w">    </span><span class="n">incomes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Income</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">OrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">OwnerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">OwnerAmount</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IncomeTypeEnum</span><span class="p">.</span><span class="n">Owner</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Promoter (se houver)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">PromoterId</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">incomes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Income</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">OrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">            </span><span class="n">OwnerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">PromoterId</span><span class="p">.</span><span class="n">Value</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">PromoterAmount</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IncomeTypeEnum</span><span class="p">.</span><span class="n">Promoter</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Incomes</span><span class="p">.</span><span class="n">AddRange</span><span class="p">(</span><span class="n">incomes</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Criar notificação de confirmação</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">notification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Notification</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NotificationTypeEnum</span><span class="p">.</span><span class="n">PaymentConfirmed</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NotificationChannelEnum</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span>
+<span class="w">        </span><span class="n">MetadataJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">OrderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Notifications</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="gestao-de-kyc">Gestão de KYC<a class="headerlink" href="#gestao-de-kyc" title="Permanent link">¶</a></h3>
+<h4 id="aprovar-kyc-admin">Aprovar KYC (Admin)<a class="headerlink" href="#aprovar-kyc-admin" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// AdminService.cs</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ApproveKycAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">ownerId</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">Owners</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">ownerId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">owner</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Pending</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"KYC não está pendente"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Ativar subconta no Iugu</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_iuguService</span><span class="p">.</span><span class="n">ActivateSubAccountAsync</span><span class="p">(</span><span class="n">owner</span><span class="p">.</span><span class="n">IuguAccountId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Atualizar status</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">SubAccountStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OwnerSubAccountStatusEnum</span><span class="p">.</span><span class="n">Approved</span><span class="p">;</span>
+<span class="w">    </span><span class="n">owner</span><span class="p">.</span><span class="n">UpdatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Notificar usuário</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">notification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Notification</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NotificationTypeEnum</span><span class="p">.</span><span class="n">KycApproved</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">owner</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">NotificationPreference</span><span class="p">,</span>
+<span class="w">        </span><span class="n">MetadataJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">OwnerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ownerId</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">_context</span><span class="p">.</span><span class="n">Notifications</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">notification</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">_context</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="configuracoes">Configurações<a class="headerlink" href="#configuracoes" title="Permanent link">¶</a></h2>
+<h3 id="appsettingsjson">appsettings.json<a class="headerlink" href="#appsettingsjson" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"ConnectionStrings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"Pay4TruDb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Host=localhost;Database=pay4tru;Username=postgres;Password=***"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"Jwt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"Secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"super-secret-key-min-32-chars"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"Issuer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amasso-api"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"Audience"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amasso-frontend"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ExpirationHours"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"Iugu"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"ApiToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"Cloudinary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"CloudName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ApiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ApiSecret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="middlewares">Middlewares<a class="headerlink" href="#middlewares" title="Permanent link">¶</a></h2>
+<h3 id="request-logging">Request Logging<a class="headerlink" href="#request-logging" title="Permanent link">¶</a></h3>
+<p>Loga todas as requisições na tabela <code>logs</code>:
+- RequestId
+- Path
+- Method
+- Status Code
+- Duration
+- IP
+- User</p>
+<h3 id="exception-handling">Exception Handling<a class="headerlink" href="#exception-handling" title="Permanent link">¶</a></h3>
+<p>Captura exceções não tratadas e retorna resposta padronizada.</p>
+<h3 id="jwt-authentication">JWT Authentication<a class="headerlink" href="#jwt-authentication" title="Permanent link">¶</a></h3>
+<p>Valida token em cada request protegido.</p>
+<h2 id="proximos-passos">Próximos Passos<a class="headerlink" href="#proximos-passos" title="Permanent link">¶</a></h2>
+<ul>
+<li>Veja <a href="../../apis/backend-api/visao-geral/">APIs &gt; Backend API</a> para referência completa de endpoints</li>
+<li>Consulte <a href="../../banco-de-dados/visao-geral/">Banco de Dados</a> para entender as entidades</li>
+<li>Leia <a href="../../guias/configuracao-ambiente/backend/">Guias &gt; Backend</a> para configurar localmente</li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Última atualização">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:41:24 UTC">17 de outubro de 2025</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Criado em">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 de outubro de 2025 00:41:24 UTC">17 de outubro de 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Voltar para o topo
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>
